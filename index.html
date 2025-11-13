@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>One Page Site</title>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    :root {
+      scroll-behavior: smooth;
+    }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+                   Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.5;
+      background: #f8f9fa;
+      color: #212529;
+    }
+    a { color: #0d6efd; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #fff;
+      border-bottom: 1px solid #ddd;
+    }
+    .nav-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: .75rem 0;
+    }
+    .brand {
+      font-weight: 600;
+    }
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+      font-size: .95rem;
+    }
+
+    main {
+      padding-bottom: 3rem;
+    }
+    section {
+      padding: 4rem 0 3rem;
+      scroll-margin-top: 4rem; /* so headings aren't hidden under sticky header */
+      border-bottom: 1px solid #e2e5e9;
+    }
+    section:last-of-type {
+      border-bottom: none;
+    }
+    section h2 {
+      margin-top: 0;
+      margin-bottom: .5rem;
+    }
+    .lead {
+      font-size: 1.1rem;
+      color: #555;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: .6rem 1.2rem;
+      background: #0d6efd;
+      color: #fff;
+      border-radius: .25rem;
+      text-decoration: none;
+      font-size: .95rem;
+      margin-top: 1rem;
+    }
+    .btn:hover { background: #0b5ed7; }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .card {
+      background: #fff;
+      padding: 1.25rem;
+      border-radius: .5rem;
+      border: 1px solid #ddd;
+    }
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: .5rem;
+    }
+
+    form {
+      display: grid;
+      gap: .75rem;
+      max-width: 480px;
+    }
+    label {
+      font-size: .9rem;
+      font-weight: 500;
+    }
+    input, textarea {
+      width: 100%;
+      padding: .5rem .6rem;
+      border-radius: .25rem;
+      border: 1px solid #ccc;
+      font: inherit;
+    }
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    footer {
+      border-top: 1px solid #ddd;
+      padding: 1rem 0 2rem;
+      font-size: .85rem;
+      color: #666;
+      background: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container nav-bar">
+      <div class="brand">Site Title</div>
+      <nav class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Home / Hero -->
+    <section id="home">
+      <div class="container">
+        <h1>Welcome to the One Page Site</h1>
+        <p class="lead">
+          Simple, generic starting point for a single-page layout.
+        </p>
+        <a href="#contact" class="btn">Get in Touch</a>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <div class="container">
+        <h2>About</h2>
+        <p>
+          Use this section to describe who you are, what you do, or what this site is about.
+        </p>
+      </div>
+    </section>
+
+    <!-- Services / Features -->
+    <section id="services">
+      <div class="container">
+        <h2>Services</h2>
+        <p>
+          Brief overview of what you offer. Add or remove cards as needed.
+        </p>
+
+        <div class="card-grid">
+          <div class="card">
+            <h3>Service One</h3>
+            <p>Short description of the first service or feature.</p>
+          </div>
+          <div class="card">
+            <h3>Service Two</h3>
+            <p>Short description of the second service or feature.</p>
+          </div>
+          <div class="card">
+            <h3>Service Three</h3>
+            <p>Short description of the third service or feature.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <div class="container">
+        <h2>Contact</h2>
+        <p>
+          Basic contact form markup. Connect it to whatever backend you prefer.
+        </p>
+
+        <form action="#" method="post">
+          <div>
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" />
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" />
+          </div>
+          <div>
+            <label for="message">Message</label>
+            <textarea id="message" name="message"></textarea>
+          </div>
+          <div>
+            <button type="submit" class="btn">Send Message</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © 2025 Your Name
+    </div>
+  </footer>
+
+</body>
+</html>
