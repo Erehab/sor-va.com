@@ -855,6 +855,20 @@ The site is now **more secure** (no exposed API keys), **simpler** (no custom JS
 
 ---
 
+## PHASE 9: Mobile Header Enhancement
+
+**Status:** ✅ Complete
+
+Added mobile-specific header display:
+- Logo now full-width on mobile (`uk-width-small-1-1`)
+- Address with map icon + "Google Maps" button (uk-visible-small)
+- Phone number as functional tel: link
+- Preserves desktop layout with `uk-hidden-small` classes
+
+Fixes missing contact info on small screens.
+
+---
+
 ## Phase Summary
 
 - **PHASE 0** ✅: Initial image & file migration (Pre-migration plan)
@@ -866,6 +880,7 @@ The site is now **more secure** (no exposed API keys), **simpler** (no custom JS
 - **PHASE 6** ✅: Remove broken links & dead code (Clicky analytics, background images)
 - **PHASE 7** ✅: CSS class verification & validation
 - **PHASE 8** ✅: Custom JavaScript cleanup & elimination (g5_master.js, nlSignup.js)
+- **PHASE 9** ✅: Mobile header enhancement (contact info visibility)
 
 ## Migration Complete! 🎉
 

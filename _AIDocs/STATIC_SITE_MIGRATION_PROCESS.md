@@ -22,6 +22,8 @@ For a new site, follow these phases in order:
 - [ ] **PHASE 5:** Remove broken links and dead code
 - [ ] **PHASE 6:** Validate CSS classes and styling
 - [ ] **PHASE 7:** Final cleanup and optimization
+- [ ] **PHASE 8:** Custom JavaScript removal (if applicable)
+- [ ] **PHASE 9:** Mobile responsiveness enhancements
 
 ---
 
@@ -512,6 +514,51 @@ python3 -m http.server 8000
 
 - **Testing without internet:** If you need to work offline, download CDN libraries locally
   - But for most cases, CDN loading is preferable (updates automatically, faster)
+
+---
+
+### PHASE 8: Custom JavaScript Removal (Optional)
+
+**Goal:** Eliminate unnecessary custom JavaScript files, replacing with native APIs or removing entirely.
+
+**Process:**
+1. Audit all local custom JS files for actual usage in HTML
+2. Search for data attributes and function calls
+3. Remove unused files and corresponding `<script>` references
+4. Replace removed functionality with native browser APIs (e.g., `window.scrollTo()` for smooth scroll)
+
+**Example:** Remove g5_master.js → native `tel:` links handle phone functionality, `window.scrollTo()` handles scroll-to-top.
+
+---
+
+### PHASE 9: Mobile Responsiveness Enhancements
+
+**Goal:** Ensure critical content visible on mobile, improve touch experience.
+
+**Checklist:**
+- Test header/nav visibility on mobile (logo, contact info)
+- Verify form inputs are touch-friendly (minimum 44px tap targets)
+- Check mobile menu navigation
+- Ensure buttons/CTAs visible and clickable on small screens
+- Test image responsiveness
+
+**Example: Mobile Header Fix**
+```html
+<!-- Desktop: Contact info hidden on mobile -->
+<div class="uk-hidden-small">Address & phone here</div>
+
+<!-- Mobile: Contact info visible on mobile -->
+<div class="uk-visible-small">
+  Address with map link
+  Phone number (tel: link)
+  Full-width logo
+</div>
+```
+
+**UIKit Visibility Classes:**
+- `uk-visible-small` - Only show on small screens
+- `uk-hidden-small` - Hide on small screens
+- Combine with grid classes for responsive layouts
 
 ---
 
