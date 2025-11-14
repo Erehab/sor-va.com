@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="format-detection" content="telephone=no">
+  <link rel='shortcut icon' href='img/favicon.ico?v=1' type='image/x-icon'/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <link rel="apple-touch-icon" href="img/icon-57x57.png?v=1" sizes="57x57"/>
+  <link rel="apple-touch-startup-image" media="(device-width: 320px)" href="img/apple-touch-startup-image-320x460.png?v=1">
+  <link rel="apple-touch-icon" href="img/icon-114x114.png?v=1" sizes="114x114"/>
+  <link rel="apple-touch-startup-image" media="(device-width: 320px) and (-webkit-device-pixel-ratio: 2)" href="img/apple-touch-startup-image-640x920.png?v=1">
+  <title>Home | Spine and Orthopedic Rehab</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name='robots' content='max-image-preview:large' />
+  <style>
+/* ===== Local Fonts ===== */
+@font-face {
+  font-family: 'Lato';
+  src: url(fonts/lato-300.ttf) format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Lato';
+  src: url(fonts/lato-400.ttf) format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Lato';
+  src: url(fonts/lato-700.ttf) format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Lato';
+  src: url(fonts/lato-italic-300.ttf) format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Lato';
+  src: url(fonts/lato-italic-400.ttf) format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Lato';
+  src: url(fonts/lato-italic-700.ttf) format('truetype');
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Oswald';
+  src: url(fonts/oswald-300.ttf) format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Oswald';
+  src: url(fonts/oswald-400.ttf) format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* ===== Reset & Baseline ===== */
+* { box-sizing: border-box; }
+html { font-size: 16px; letter-spacing: normal; }
+body { margin: 0; padding: 0; font-family: Lato, sans-serif; color: #212529; line-height: 1.5; overflow-x: hidden; }
+h1, h2, h3, h4, h5, h6 { font-family: Oswald, sans-serif; margin: 0; }
+p { margin: 0; }
+ul, li { margin: 0; padding: 0; list-style: none; }
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; height: auto; display: block; }
+button { cursor: pointer; }
+
+/* ===== Colors & Spacing ===== */
+:root {
+  --primary: #2067a3;
+  --primary-shade: #2a4973;
+  --warning: #f0ad4e;
+  --white: #fff;
+  --black: #212529;
+  --gray-light: #f8f9fa;
+  --gray-dark: #555;
+}
+
+/* ===== Container ===== */
+.container { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+.container-large { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+/* ===== Grid ===== */
+.grid { display: grid; gap: 24px; grid-auto-flow: row; }
+.grid-2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+.grid-3 { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+.grid-4 { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+.flex { display: flex; }
+.flex-center { justify-content: center; align-items: center; }
+.flex-middle { align-items: center; }
+.flex-col { flex-direction: column; }
+.flex-space-between { justify-content: space-between; }
+
+/* ===== Typography ===== */
+.h1 { font-size: 2.5rem; font-weight: 700; }
+.h2 { font-size: 2rem; font-weight: 700; }
+.h3 { font-size: 1.5rem; font-weight: 700; }
+.h4 { font-size: 1.25rem; font-weight: 700; }
+.text-center { text-align: center; }
+.text-uppercase { text-transform: uppercase; }
+.text-bold { font-weight: 700; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+/* ===== Colors ===== */
+.bg-white { background: var(--white); }
+.bg-primary { background: var(--primary); }
+.bg-primary-shade { background: var(--primary-shade); }
+.bg-light { background: var(--gray-light); }
+.color-primary { color: var(--primary); }
+.color-primary-shade { color: var(--primary-shade); }
+.color-warning { color: var(--warning); }
+.color-white { color: var(--white); }
+.color-black { color: var(--black); }
+
+/* ===== Spacing ===== */
+.p { padding: 16px; }
+.p-sm { padding: 8px; }
+.p-lg { padding: 32px; }
+.p-xl { padding: 48px; }
+.pt { padding-top: 24px; }
+.pb { padding-bottom: 24px; }
+.px { padding-left: 20px; padding-right: 20px; }
+.py { padding-top: 24px; padding-bottom: 24px; }
+.mb { margin-bottom: 16px; }
+.mt { margin-top: 16px; }
+
+/* ===== Button ===== */
+.btn {
+  display: inline-block;
+  padding: 8px 16px;
+  background: #eee;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btn:hover { background: #ddd; }
+.btn-primary { background: var(--primary); color: var(--white); }
+.btn-primary:hover { background: var(--primary-shade); }
+.btn-warning { background: var(--warning); color: var(--white); }
+.btn-warning:hover { background: #ec971f; }
+
+/* ===== Responsive ===== */
+.hide-mobile { display: block; }
+.show-mobile { display: none; }
+@media (max-width: 768px) {
+  .hide-mobile { display: none !important; }
+  .show-mobile { display: block !important; }
+  .text-center-mobile { text-align: center; }
+  .grid-2 { grid-template-columns: 1fr; }
+  .grid-3 { grid-template-columns: 1fr; }
+  .grid-4 { grid-template-columns: 1fr; }
+  .flex-column-mobile { flex-direction: column; }
+}
+
+/* ===== Header ===== */
+#header { background: var(--white); padding: 16px 0; border-bottom: 1px solid #eee; }
+#header .logo { width: 200px; height: auto; }
+#header .contact-info { display: flex; gap: 24px; align-items: center; justify-content: flex-end; }
+#header .contact-item { text-align: right; }
+#header .contact-item a { color: var(--primary); display: flex; align-items: center; gap: 8px; }
+#header .contact-item a:hover { color: var(--primary-shade); }
+
+@media (max-width: 768px) {
+  #header .logo { width: 150px; }
+  #header .contact-info { flex-direction: column; gap: 16px; justify-content: center; }
+  #header .contact-item { text-align: center; }
+}
+
+/* ===== Hero ===== */
+.hero { position: relative; height: 650px; overflow: hidden; background-size: cover; background-position: center; }
+.hero img { width: 100%; height: 100%; object-fit: cover; }
+.hero-overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(255, 255, 255, 0.8); display: flex; align-items: flex-end; padding: 40px; }
+.hero-content { background: white; padding: 20px; }
+.hero-content h1 { color: var(--primary); font-size: 2rem; margin-bottom: 12px; }
+.hero-content p { color: var(--primary-shade); font-size: 1.1rem; margin-bottom: 8px; }
+
+@media (max-width: 768px) {
+  .hero { height: 500px; }
+  .hero-content h1 { font-size: 1.5rem; }
+  .hero-content p { font-size: 1rem; }
+}
+
+/* ===== Sections ===== */
+section { padding: 48px 0; }
+section.dark { background: var(--primary); color: var(--white); }
+section.light { background: var(--gray-light); }
+
+/* ===== Value Stack ===== */
+.value-item { padding: 24px; border: 2px solid var(--primary); text-align: center; }
+.value-item img { margin: 0 auto 16px; width: 80px; height: 80px; }
+.value-item h3 { color: var(--primary); margin-bottom: 12px; font-size: 1.1rem; }
+.value-item p { color: var(--primary-shade); font-size: 0.95rem; }
+
+/* ===== Stakes Section ===== */
+#tm-stakes { padding: 48px 20px; background: rgba(245, 245, 245, 0.5); }
+.stakes-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: center; }
+.stakes-content h1 { color: var(--primary); margin-bottom: 16px; }
+.stakes-list { list-style: none; margin-top: 24px; }
+.stakes-list li { padding: 12px 0; border-bottom: 1px solid #ddd; color: var(--black); font-size: 1.1rem; }
+
+@media (max-width: 768px) {
+  .stakes-grid { grid-template-columns: 1fr; gap: 24px; }
+  .stakes-content { text-align: center; }
+}
+
+/* ===== Video Wrapper ===== */
+.video-wrapper { position: relative; width: 100%; padding-bottom: 56.25%; background: #000; border-radius: 4px; overflow: hidden; }
+.video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+
+/* ===== Cards ===== */
+.card { position: relative; background: var(--primary); color: var(--white); border-radius: 4px; overflow: hidden; text-align: center; }
+.card img { width: 100%; height: 300px; object-fit: cover; display: block; }
+.card-overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(42, 73, 115, 0.7); display: flex; align-items: center; justify-content: center; padding: 20px; }
+.card-overlay h3 { color: var(--white); font-size: 1.1rem; }
+.card-step { position: relative; padding-top: 80px; }
+.card-number { position: absolute; top: -40px; left: 50%; transform: translateX(-50%); width: 80px; height: 80px; border-radius: 50%; background: #28a745; color: white; font-size: 2rem; font-weight: bold; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
+
+/* ===== Services Grid ===== */
+.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+.service-card { background: rgba(255,255,255,0.1); padding: 20px; border-radius: 4px; text-align: center; transition: background 0.3s; }
+.service-card:hover { background: var(--warning); }
+.service-card img { width: 100%; height: 280px; object-fit: cover; margin-bottom: 16px; border-radius: 4px; }
+.service-card h3 { color: var(--white); font-size: 1.1rem; }
+
+/* ===== Testimonials ===== */
+.testimonial { background: var(--white); padding: 24px; border-left: 4px solid #28a745; margin-bottom: 20px; border-radius: 4px; }
+.testimonial-stars { color: #ffc107; margin-bottom: 12px; }
+.testimonial-quote { color: var(--black); margin-bottom: 12px; font-style: italic; }
+.testimonial-author { color: var(--primary); text-align: right; font-weight: 700; }
+
+/* ===== Footer ===== */
+#footer { background: var(--primary); color: var(--white); padding: 32px 0 16px; }
+#footer .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 32px; margin-bottom: 32px; }
+#footer .footer-logo { width: 180px; margin-bottom: 16px; }
+#footer .footer-section h4 { margin-bottom: 16px; }
+#footer .footer-section p, #footer .footer-section li { margin-bottom: 8px; font-size: 0.95rem; }
+#footer .footer-section a { color: var(--white); transition: color 0.2s; }
+#footer .footer-section a:hover { color: var(--warning); }
+#footer .social { display: flex; gap: 12px; margin-top: 16px; }
+#footer .social a { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; background: rgba(255,255,255,0.2); border-radius: 4px; font-size: 1.2rem; }
+#footer .social a:hover { background: var(--warning); }
+#footer .footer-bottom { text-align: center; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.2); font-size: 0.9rem; }
+#footer .hours { list-style: none; }
+#footer .hours li { display: flex; justify-content: space-between; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+
+@media (max-width: 768px) {
+  #footer .footer-grid { grid-template-columns: 1fr; }
+}
+
+/* ===== CTA ===== */
+.cta-section { background-image: url(img/stock-10891.jpg?v=1); background-position: center; background-size: cover; background-attachment: fixed; }
+.cta-overlay { background: rgba(255, 255, 255, 0.8); padding: 48px 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: center; }
+.cta-text h2 { color: var(--primary); margin-bottom: 12px; }
+.cta-text h1 { color: var(--primary-shade); }
+.cta-phone { text-align: center; }
+.cta-phone h2 { color: var(--warning); margin-bottom: 12px; }
+.cta-phone a { display: inline-block; color: var(--black); font-size: 2rem; font-weight: bold; }
+
+@media (max-width: 768px) {
+  .cta-overlay { grid-template-columns: 1fr; }
+}
+
+/* ===== Links ===== */
+a { color: var(--primary); }
+a:hover { color: var(--primary-shade); }
+.hover-color:hover { color: var(--warning); }
+
+/* ===== Transitions ===== */
+* { transition: color 0.2s, background 0.2s; }
+  </style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header id="header">
+  <div class="container flex flex-middle">
+    <img src="img/logo.svg" alt="Logo" class="logo" width="600" height="200" loading="lazy">
+    <div class="flex" style="flex: 1;"></div>
+    <div class="contact-info hide-mobile">
+      <div class="contact-item">
+        <a href="https://www.google.com/maps?q=Spine+and+Orthopedic+Rehab+1919+Electric+Rd+SW+24018" target="_blank">
+          📍 1919 Electric Rd SW<br>Roanoke, VA 24018
+        </a>
+      </div>
+      <div class="contact-item">
+        <a href="tel:5407255300">☎ (540) 725-5300</a>
+      </div>
+    </div>
+  </div>
+  <div class="show-mobile text-center py">
+    <div class="mb">
+      <a href="https://www.google.com/maps?q=Spine+and+Orthopedic+Rehab+1919+Electric+Rd+SW+24018" target="_blank" class="color-primary">
+        📍 1919 Electric Rd SW, Roanoke, VA 24018
+      </a>
+    </div>
+    <a href="https://www.google.com/maps?q=Spine+and+Orthopedic+Rehab+1919+Electric+Rd+SW+24018" target="_blank" class="btn">Google Maps</a>
+    <div class="mt">
+      <a href="tel:5407255300" class="color-primary">☎ (540) 725-5300</a>
+    </div>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero hide-mobile">
+  <img src="img/spine-ortho-roanoke1.jpg" alt="Spine and Orthopedic Rehab" width="1280" height="650" loading="lazy">
+  <div class="hero-overlay">
+    <div class="hero-content">
+      <h1 class="text-uppercase">Personalized Physical Therapy, Chiropractic, & Acupuncture</h1>
+      <p><strong>For Rapid Pain Relief & Recovery Of Function</strong></p>
+      <p>We Provide You With The Path To Enjoying A Pain-Free, Independent Life Again</p>
+    </div>
+  </div>
+</section>
+
+<section class="hero show-mobile" style="background-image: url(img/spine-ortho-roanoke1.jpg); background-size: cover;">
+  <div class="hero-overlay">
+    <div class="hero-content">
+      <h1 class="text-uppercase" style="font-size: 1.5rem;">Personalized Physical Therapy, Chiropractic, & Acupuncture</h1>
+      <p><strong>For Rapid Pain Relief & Recovery Of Function</strong></p>
+      <p>We Provide You With The Path To Enjoying A Pain-Free, Independent Life Again</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== VALUE PROPOSITION ===== -->
+<section>
+  <div class="container">
+    <div class="grid grid-3">
+      <div class="value-item">
+        <img src="img/1-hour.svg" alt="1 Hour" width="80" height="80" loading="lazy">
+        <h3 class="text-uppercase">Full One-Hour Initial Evaluation</h3>
+        <p>We Take The Time To Listen To You</p>
+      </div>
+      <div class="value-item">
+        <img src="img/checked.svg" alt="Checked" width="80" height="80" loading="lazy">
+        <h3 class="text-uppercase">The Right Treatments for Faster Results</h3>
+        <p>We Combine Physical Therapy, Chiropractic, & Acupuncture</p>
+      </div>
+      <div class="value-item">
+        <img src="img/clipboard.svg" alt="Clipboard" width="80" height="80" loading="lazy">
+        <h3 class="text-uppercase">Most Insurance Plans Accepted</h3>
+        <p>Medicare, Private Insurances, Worker's Comp</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PAIN POINTS ===== -->
+<section id="tm-stakes">
+  <div class="container">
+    <div class="stakes-grid">
+      <div class="stakes-content hide-mobile">
+        <h1 class="h1 color-primary-shade">Are You Having</h1>
+        <h1 class="h1 text-uppercase color-primary">Trouble with Daily Activities?</h1>
+        <ul class="stakes-list">
+          <li>Does It Feel Like No One Is Listening?</li>
+          <li>Not Sure What's Causing Your Pain?</li>
+          <li>Missing Out on Fun with Family & Friends?</li>
+          <li>Want to Avoid Unnecessary Drugs & Surgery?</li>
+        </ul>
+      </div>
+      <div style="text-align: center;">
+        <h1 class="h1 color-primary-shade show-mobile text-center-mobile">Are You Having</h1>
+        <h1 class="h1 text-uppercase color-primary show-mobile text-center-mobile">Trouble with Daily Activities?</h1>
+        <img src="img/elbow-brace.png?v=1" alt="Elbow Brace" width="250" height="250" loading="lazy" style="max-width: 250px; margin: 0 auto;">
+      </div>
+      <div class="hide-mobile" style="text-align: center;">
+        <img src="img/elbow-brace.png?v=1" alt="Elbow Brace" width="250" height="250" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABOUT / BENEFITS ===== -->
+<section class="dark">
+  <div class="container">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: center;">
+      <div class="video-wrapper">
+        <iframe loading="lazy" src="https://www.youtube.com/embed/c5XzLQUNFOI?si=qSTALCj5-9ZoM7Tv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <div>
+        <h2 class="color-white">We've Been</h2>
+        <h1 class="h1 color-warning text-uppercase">Serving Roanoke Valley Since 1995 & Practicing Since 1987</h1>
+        <h4 class="color-white mt">SOR has the unique ability to combine physical therapy, chiropractic and acupuncture/dry needling all from one experienced provider.</h4>
+        <div class="mt py">
+          <p class="color-white mb">At Spine and Orthopedic Rehab, your experience will include:</p>
+          <ul class="color-white">
+            <li class="mb">A thorough evaluation identifying all components of your unique problem</li>
+            <li class="mb">Education focused on how you can contribute to your own healing</li>
+            <li class="mb">A comprehensive treatment plan that may include manual hands-on therapy, pain-relieving modalities and exercises appropriate for your condition</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GETTING STARTED ===== -->
+<section class="light">
+  <div class="container">
+    <h1 class="text-center color-primary text-uppercase mb mb">Getting Started Is Easy</h1>
+    <div class="grid grid-3" style="margin-top: 40px;">
+      <div class="card card-step">
+        <img src="img/stock-8078.jpg" alt="Contact Us" width="400" height="300" loading="lazy">
+        <div class="p">
+          <div class="card-number">1</div>
+          <h3 class="color-white">Contact Us</h3>
+        </div>
+      </div>
+      <div class="card card-step">
+        <img src="img/stock-6218.jpg" alt="Schedule" width="400" height="300" loading="lazy">
+        <div class="p">
+          <div class="card-number">2</div>
+          <h3 class="color-white">Schedule An Appointment</h3>
+        </div>
+      </div>
+      <div class="card card-step">
+        <img src="img/stock-8475.jpg" alt="Meet" width="400" height="300" loading="lazy">
+        <div class="p">
+          <div class="card-number">3</div>
+          <h3 class="color-white">Come In And Meet With Your Therapist</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CALL TO ACTION 1 ===== -->
+<section class="cta-section">
+  <div class="container-large">
+    <div class="cta-overlay">
+      <div class="cta-text">
+        <h2 class="h2 text-bold">Ready to Feel Better?</h2>
+        <h1 class="h1 text-uppercase">Schedule Your Initial Evaluation & Let's Make Things Happen!</h1>
+      </div>
+      <div class="cta-phone">
+        <img src="img/phone-call.svg?v=1" alt="Phone" width="70" height="70" style="margin: 0 auto 16px;">
+        <h2 class="h2 text-uppercase color-warning">Call Now</h2>
+        <a href="tel:5407255300">(540) 725-5300</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SPECIALIZATIONS ===== -->
+<section class="dark">
+  <div class="container">
+    <h2 class="h2 text-center color-white text-uppercase mb mb">We Specialize In:</h2>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px;">
+      <ul class="color-white">
+        <li class="mb">Sports Injuries</li>
+        <li class="mb">Neck and Back Pain / Sciatica</li>
+        <li class="mb">Sprains and Strains</li>
+        <li class="mb">Arthritis, Tendonitis, Bursitis Issues</li>
+        <li class="mb">Walking and Balance Disorders</li>
+      </ul>
+      <ul class="color-white">
+        <li class="mb">Work Related Injuries (Workers' Compensation)</li>
+        <li class="mb">Titlest Fitness Programs</li>
+        <li class="mb">Sports Performance Programs</li>
+        <li class="mb">Senior Health & Fitness Enhancement Programs</li>
+        <li class="mb">Post-Surgical Rehab Programs</li>
+        <li class="mb">And more..</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROFESSIONAL SERVICES ===== -->
+<section class="light">
+  <div class="container">
+    <h2 class="h1 text-center color-primary-shade text-uppercase mb mb">Professional Services We Provide:</h2>
+    <div class="services-grid">
+      <div class="service-card dark" style="background: var(--primary);">
+        <img src="img/stock-11624.jpg" alt="Orthopedic Physical Therapy" width="500" height="280" loading="lazy">
+        <h3 class="text-uppercase">Orthopedic Physical Therapy</h3>
+      </div>
+      <div class="service-card dark" style="background: var(--primary);">
+        <img src="img/stock-10799.jpg" alt="Sports Medicine" width="500" height="280" loading="lazy">
+        <h3 class="text-uppercase">Sports Medicine & Rehabilitation</h3>
+      </div>
+      <div class="service-card dark" style="background: var(--primary);">
+        <img src="img/stock-11011.jpg?v=1" alt="Balance Therapy" width="500" height="280" loading="lazy">
+        <h3 class="text-uppercase">Balance Therapy</h3>
+      </div>
+      <div class="service-card dark" style="background: var(--primary);">
+        <img src="img/stock-12443.jpg?v=1" alt="Vestibular Rehabilitation" width="500" height="280" loading="lazy">
+        <h3 class="text-uppercase">Vestibular Rehabilitation</h3>
+      </div>
+      <div class="service-card dark" style="background: var(--primary);">
+        <img src="img/stock-8855.jpg?v=1" alt="Pelvic Floor Therapy" width="500" height="280" loading="lazy">
+        <h3 class="text-uppercase">Pelvic Floor Therapy</h3>
+      </div>
+      <div class="service-card dark" style="background: var(--primary);">
+        <img src="img/stock-7553.jpg?v=1" alt="Occupational Therapy" width="500" height="280" loading="lazy">
+        <h3 class="text-uppercase">Occupational Therapy</h3>
+      </div>
+      <div class="service-card dark" style="background: var(--primary);">
+        <img src="img/stock-10713.jpg?v=1" alt="Speech Therapy" width="500" height="280" loading="lazy">
+        <h3 class="text-uppercase">Speech Therapy</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROFESSIONAL SERVICES GRID ===== -->
+<section class="dark">
+  <div class="container">
+    <h1 class="text-center color-white text-uppercase mb mb">Professional Services Provided:</h1>
+    <div class="services-grid">
+      <div class="service-card" style="background: rgba(255,255,255,0.15);">
+        <img src="img/stock-10639.jpg?v=1" alt="Physical Therapy" width="400" height="300" loading="lazy">
+        <h3 class="text-uppercase">Physical Therapy</h3>
+      </div>
+      <div class="service-card" style="background: rgba(255,255,255,0.15);">
+        <img src="img/stock-9686.jpg?v=1" alt="Chiropractic" width="400" height="300" loading="lazy">
+        <h3 class="text-uppercase">Chiropractic</h3>
+      </div>
+      <div class="service-card" style="background: rgba(255,255,255,0.15);">
+        <img src="img/stock-8241.jpg?v=1" alt="Acupuncture" width="400" height="300" loading="lazy">
+        <h3 class="text-uppercase">Acupuncture / Dry Needling</h3>
+      </div>
+      <div class="service-card" style="background: rgba(255,255,255,0.15);">
+        <img src="img/stock-7065.jpg?v=1" alt="Golf Fitness" width="400" height="300" loading="lazy">
+        <h3 class="text-uppercase">Titleist Golf Fitness</h3>
+      </div>
+      <div class="service-card" style="background: rgba(255,255,255,0.15);">
+        <img src="img/stock-6391.jpg?v=1" alt="Cold Laser" width="400" height="300" loading="lazy">
+        <h3 class="text-uppercase">Cold Laser Therapy</h3>
+      </div>
+      <div class="service-card" style="background: rgba(255,255,255,0.15);">
+        <img src="img/stock-2348.jpg?v=1" alt="Spine Rehab" width="400" height="300" loading="lazy">
+        <h3 class="text-uppercase">Spine Rehab</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section>
+  <div class="container">
+    <h1 class="h1 text-center color-primary mb mb">Patient Success Stories</h1>
+    <div class="grid grid-3">
+      <div class="testimonial">
+        <div class="testimonial-stars">★★★★★</div>
+        <div class="testimonial-quote">The staff at SOR is wonderful! Each person is friendly, patient, and helpful. The treatment plan begins very basically and progresses at your own pace until you complete your individual goal.</div>
+        <div class="testimonial-author">- Sandi M.</div>
+      </div>
+      <div class="testimonial">
+        <div class="testimonial-stars">★★★★★</div>
+        <div class="testimonial-quote">There is a certain feeling of wellness here at this physical therapy rehab facility.</div>
+        <div class="testimonial-author">- Chrystie S.</div>
+      </div>
+      <div class="testimonial">
+        <div class="testimonial-stars">★★★★★</div>
+        <div class="testimonial-quote">I have had PT numerous times for my back. This was the first time I really found it helpful. Thanks, Rick, Jess, and Carol.</div>
+        <div class="testimonial-author">- Susan N.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CALL TO ACTION 2 ===== -->
+<section class="cta-section">
+  <div class="container-large">
+    <div class="cta-overlay">
+      <div class="cta-text">
+        <h2 class="h2 text-bold">Ready to Feel Better?</h2>
+        <h1 class="h1 text-uppercase">Schedule Your Initial Evaluation & Let's Make Things Happen!</h1>
+      </div>
+      <div class="cta-phone">
+        <img src="img/phone-call.svg?v=1" alt="Phone" width="70" height="70" style="margin: 0 auto 16px;">
+        <h2 class="h2 text-uppercase color-warning">Call Now</h2>
+        <a href="tel:5407255300">(540) 725-5300</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer id="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-section">
+        <img src="img/logo-white.svg?v=1" alt="Logo" class="footer-logo" width="180" height="60" loading="lazy">
+        <div style="margin-bottom: 16px;">
+          <a href="https://www.google.com/maps?q=Spine+and+Orthopedic+Rehab+1919+Electric+Rd+SW+24018" target="_blank">
+            📍 1919 Electric Rd SW<br>Roanoke, VA 24018
+          </a>
+        </div>
+        <a href="tel:5407255300">☎ (540) 725-5300</a><br>
+        <span>📠 (540) 725-5356</span>
+        <div class="social">
+          <a href="https://www.facebook.com/SpineOrthoRehab/" target="_blank" title="Facebook">f</a>
+          <a href="https://www.yelp.com/biz/spine-and-orthopedic-rehab-roanoke" target="_blank" title="Yelp">Y</a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h4>Hours of Operation:</h4>
+        <ul class="hours">
+          <li><span>Monday</span> <span>8:00AM – 7:00PM</span></li>
+          <li><span>Tuesday</span> <span>By Appointment Only</span></li>
+          <li><span>Wednesday</span> <span>8:00AM – 7:00PM</span></li>
+          <li><span>Thursday</span> <span>By Appointment Only</span></li>
+          <li><span>Friday</span> <span>8:00AM – 7:00PM</span></li>
+          <li><span>Saturday</span> <span>Close</span></li>
+          <li><span>Sunday</span> <span>Close</span></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <iframe src="https://maps.google.com/maps?q=Spine+and+Orthopedic+Rehab,+1919+Electric+Rd+SW,+Roanoke,+VA+24018&t=&z=16&ie=UTF8&iwloc=&output=embed" style="width:100%;height:300px;border:0;border-radius:4px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; Copyright <span id="year"></span> Spine and Orthopedic Rehab, All Rights Reserved.</p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
