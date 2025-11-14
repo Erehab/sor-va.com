@@ -6,6 +6,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 This is a static HTML site repository (`sor-va.com`) containing simple one-page website templates. The project consists of minimal HTML files with embedded CSS, no build process, and no backend dependencies. The goal is to make this site run completely for this directory structure with only calls to cdnjs.
 
+## How to manage tasks VERY IMPORTANT
+Read the /_AIDocs/MIGRATION_PLAN.md file before making any changes to the project.
+
 ### Repository Details
 - **GitHub**: `git@github.com:Erehab/sor-va.com.git`
 - **Main Branch**: `main`
@@ -15,17 +18,14 @@ This is a static HTML site repository (`sor-va.com`) containing simple one-page 
 
 ### Main Files
 - `index.html` - Primary one-page site template with header, navigation, sections (home, about, services, contact), and embedded styling
-- `indexSimple.html` - Simplified version of the template
-- `dump/` - Archived/reference files (not part of active development)
+- `dump/` - Archived/reference files (not part of active development) Only read when requested.
 
 ## Development
 
 ### Viewing the Site
-Since this is a static HTML project, simply open the HTML files in a browser:
+Since this is a static HTML project, simply open the HTML files in a browser or use Playwright to test.
 ```bash
 open index.html
-# or
-open indexSimple.html
 ```
 
 Alternatively, if you want to test with a local server:
@@ -44,9 +44,10 @@ The HTML is self-contained with:
 
 #### Adding New Sections
 1. Add a new `<section>` element in the `<main>` area with a unique `id`
-2. Add corresponding link in the navigation `.nav-links`
-3. Follow the existing CSS patterns for padding and borders
-4. Use `.container` div for content wrapper
+1. Add corresponding link in the navigation `.nav-links`
+1. Follow the existing CSS patterns for padding and borders
+1. Use `.container` div for content wrapper
+1. Make the sections navigatable with a simple menu that goes to anchor tags on the sections
 
 #### Styling Changes
 All CSS is in the `<style>` tag. Key design elements:
@@ -55,12 +56,6 @@ All CSS is in the `<style>` tag. Key design elements:
 - **Typography**: System fonts with fallbacks
 - **Spacing**: Uses rem units (1rem = 16px base)
 - **Responsive**: Uses `auto-fit` grid and flexbox for mobile compatibility
-
-#### Form Integration
-The contact form (`id="contact"`) has placeholder `action="#"`. Connect it to a backend service by:
-1. Updating the `action` attribute to point to your endpoint
-2. Adjusting the `method` if needed (currently `post`)
-3. Ensure field names (`name`, `email`, `message`) match your backend expectations
 
 ### Git Workflow
 - Use SSH URLs (already configured as `git@github.com:Erehab/sor-va.com.git`)
