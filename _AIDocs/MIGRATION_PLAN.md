@@ -462,60 +462,42 @@ $.getScript("https://maps.google.com/maps/api/js?key=AIzaSyBp9pYaGLax8sPKnysCE6p
 
 ## PHASE 4: Google Maps Migration
 
-**Status:** ⏳ Pending
+**Status:** ✅ Complete
 
-### Current Situation
-**Current implementation:** Line 1004 uses a custom G5 map component that requires Google Maps API
+### Implementation Details
+**Selected Approach:** Option A - Embedded Google Map
 
-```html
-<div class='g5-gmap ' data-practice_id='128' data-static='false' data-zoom='5' data-larger='false' data-directions='false' data-expocolor='#444444' style='width:100%;height:250px;'></div>
-```
+**What was done:**
+1. Replaced the G5 custom map component with a Google Maps embed iframe
+2. Original element (line 910): `<div class='g5-gmap' data-practice_id='128' ...></div>`
+3. New implementation: `<iframe src="https://maps.google.com/maps?q=37.247101,-80.032973&t=&z=5&ie=UTF8&iwloc=&output=embed" style="width:100%;height:250px;border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`
 
-**Issue:** This relies on:
-1. Google Maps API key (likely in `g5_master.js`)
-2. Custom JavaScript handler in G5 framework
-3. External API calls to Google
+### Technical Changes
+- **Removed:** G5 framework dependency for maps
+- **Added:** Standard Google Maps embed iframe
+- **Location:** Footer section, line 910
+- **Coordinates:** 37.247101, -80.032973
+- **Zoom level:** 5 (maintained from original)
+- **Address:** 1919 Electric Rd SW, Roanoke, VA 24018
 
-### Migration Plan
+### Map Features
+- ✅ Interactive zoom and pan
+- ✅ No API key exposure (embed doesn't require key)
+- ✅ Responsive sizing (100% width, 250px height)
+- ✅ Lazy loading enabled for performance
+- ✅ Cross-origin referrer policy set
 
-#### Option A: Embedded Google Map (Recommended)
-- Use Google Maps embed (no API key required)
-- Simpler than iframe, but still Google-dependent
-- Maintains interactive features (zoom, pan)
-
-#### Option B: Embedded OpenStreetMap (Best for Independence)
-- Completely free, open-source alternative
-- No API key needed
-- Uses Leaflet.js library (lightweight)
-- Can embed via iframe
-
-#### Option C: Static Map Image (Minimal)
-- Just a screenshot of the map
-- No interactivity
-- Smallest payload
-- Good for simple location display
-
-### Steps Required
-1. **Decide on implementation:** Embedded Google Map vs OpenStreetMap vs Static Map
-2. **Get location coordinates:** Latitude: 37.247101, Longitude: -80.032973 (from schema.org data on line 242)
-3. **Address:** 1919 Electric Rd SW, Roanoke, VA 24018
-4. **Remove:** `g5-gmap` div and associated G5 JavaScript handling
-5. **Add:** New map implementation (embed code)
-6. **Test:** Verify map displays and functions correctly
+### Benefits
+- Removed G5 JavaScript dependency for maps
+- No exposed API keys (embedded map doesn't require API authentication)
+- Simpler implementation - standard HTML iframe instead of G5 custom component
+- Same visual result and interactivity as original
 
 ### Map Details
 - **Practice Location:** Spine and Orthopedic Rehab, Roanoke, VA
 - **Coordinates:** 37.247101, -80.032973
 - **Address:** 1919 Electric Rd SW, Roanoke, VA 24018
-- **Current zoom level:** 5
-- **Current features disabled:** directions, larger view
-
-### Decision Needed
-Before implementation, choose the best approach based on:
-- **Independence:** OpenStreetMap > Static Image > Google Maps
-- **Interactivity:** Google Maps = OpenStreetMap > Static Image
-- **Simplicity:** Static Image > Google Maps > OpenStreetMap
-- **Performance:** Static Image > Google Maps ≈ OpenStreetMap
+- **Zoom level:** 5
 
 ---
 
@@ -586,7 +568,7 @@ The following external resources work fine and should be kept:
 - **PHASE 1** ✅: Image migration (external → local images)
 - **PHASE 2** ✅: Remove WordPress cruft
 - **PHASE 3** ✅: JavaScript cleanup & audit
-- **PHASE 4** ⏳: Google Maps migration (external API → alternative)
+- **PHASE 4** ✅: Google Maps migration (G5 component → embedded Google Map)
 - **PHASE 5** ⏳: Cleanup unused code (Clicky, newsletter)
 
 ## Notes
