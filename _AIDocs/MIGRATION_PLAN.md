@@ -501,12 +501,12 @@ $.getScript("https://maps.google.com/maps/api/js?key=AIzaSyBp9pYaGLax8sPKnysCE6p
 
 ---
 
-## PHASE 5: Cleanup Unused Code
+## PHASE 5: Remove Broken & Unused Links
 
 **Status:** ⏳ Pending
 
 ### Overview
-Mark and document unused code elements for removal. These don't break anything but serve no purpose on the static site.
+Remove broken links and page references that don't function on a static HTML site. These are relics from the WordPress export and require backend support that no longer exists.
 
 ### Items to Remove
 
@@ -554,6 +554,68 @@ Mark and document unused code elements for removal. These don't break anything b
 
 ---
 
+## PHASE 6: Remove Broken Links & Dead Code
+
+**Status:** ⏳ Pending
+
+### Overview
+Remove or fix broken links that don't function on a static HTML site. These are relics from the WordPress/G5 framework architecture that reference pages, APIs, and functionality that no longer exist.
+
+### Detailed Analysis
+
+See `BROKEN_LINKS_ANALYSIS.md` for comprehensive link audit with line numbers and context.
+
+### Quick Summary of Issues
+
+#### Links to Remove (Total: 9)
+1. **`/reviews/`** (Line 760) - "Read More Reviews" button - No backend reviews
+2. **`/review_new/`** (Line 764) - "Add Your Own Story" button - No submission endpoint
+3. **`/location/`** (Lines 244, 876, 882) - Address links - Should be `#` or removed
+4. **`/#/`** (Lines 632, 643, 654, 665, 676, 687) - Service placeholders - Change to `#` or remove href
+
+#### Code to Remove (Optional)
+1. **Clicky Analytics** (Lines 957-967) - Dead tracking code
+2. **Commented old links** (Lines 250, 405, 415, 425) - Legacy WordPress code
+
+### Implementation Steps
+
+**Step 1: Remove Review Buttons (2 lines)**
+- Delete line 760: `<a href="/reviews/">` button
+- Delete line 764: `<a href="/review_new/">` button
+
+**Step 2: Fix Location Links (3 locations)**
+- Line 244: Replace `href="/location/"` with `href="#"`
+- Line 876: Replace `href="/location/"` with `href="#"`
+- Line 882: Replace `href="/location/"` with `href="#"`
+
+**Step 3: Fix Service Links (6 locations)**
+- Lines 632, 643, 654, 665, 676, 687: Change `href="/#/"` to `href="#"`
+
+**Step 4: Remove Analytics (Optional - 11 lines)**
+- Delete lines 957-967: Clicky analytics script
+
+**Step 5: Clean up Commented Code (Optional - 4 locations)**
+- Line 250: Delete commented Request Appointment
+- Line 405: Delete commented Contact Us link
+- Line 415: Delete commented Appointment link
+- Line 425: Delete commented Staff link
+
+### Testing Checklist
+- [ ] Verify no broken `/` redirects
+- [ ] Verify phone links still work
+- [ ] Verify social media links work
+- [ ] Verify Back to Top anchor works
+- [ ] Verify all images load correctly
+- [ ] Test in browser with and without internet
+
+### Estimated Impact
+- **Lines removed:** 20-30
+- **Size reduction:** ~1KB
+- **Broken links fixed:** 9
+- **User experience improvement:** Better footer, cleaner navigation
+
+---
+
 ## What Works Locally As-Is
 
 The following external resources work fine and should be kept:
@@ -569,7 +631,8 @@ The following external resources work fine and should be kept:
 - **PHASE 2** ✅: Remove WordPress cruft
 - **PHASE 3** ✅: JavaScript cleanup & audit
 - **PHASE 4** ✅: Google Maps migration (G5 component → embedded Google Map)
-- **PHASE 5** ⏳: Cleanup unused code (Clicky, newsletter)
+- **PHASE 5** ⏳: Remove broken & unused links
+- **PHASE 6** ⏳: Cleanup unused code (Clicky, newsletter, CSS background images)
 
 ## Notes
 - All migrated images use query string cache busting format: `img/filename.ext?v=1`
