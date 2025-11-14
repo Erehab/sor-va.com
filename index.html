@@ -31,7 +31,6 @@
 	<meta name='robots' content='max-image-preview:large' />
 	<style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
 	<link rel='dns-prefetch' href='//cdnjs.cloudflare.com' />
-<link rel='stylesheet' id='recovery-process-css-css' href='recovery-process.css' type='text/css' media='all' />
 <link rel='stylesheet' id='uikitcore-css' href='output.min.css' type='text/css' media='all' />
 <style id='uikitcore-inline-css' type='text/css'>
 
@@ -202,6 +201,22 @@ html .uk-nav.uk-nav-offcanvas>li.uk-active>a { background: #f15a24; color: #fff;
 #menu-item-offcanvas-14 {
 	font-weight: 600;
 }
+
+/* Fix image sizing in Getting Started section */
+#tm-plan .uk-panel img {
+	height: 300px;
+	width: 100%;
+	object-fit: cover;
+	display: block;
+}
+
+/* Fix image sizing in Professional Services carousel */
+#tm-service figure img {
+	height: 280px;
+	width: 100%;
+	object-fit: cover;
+	display: block;
+}
 </style>
 	<!--- E-rehab Generated Schema Data : 128 -->
 
@@ -235,13 +250,13 @@ html .uk-nav.uk-nav-offcanvas>li.uk-active>a { background: #f15a24; color: #fff;
 	<div class="uk-container-center uk-container g5-padding-medium-left g5-padding-medium-right uk-width-large-1-1 uk-width-medium-1-1 uk-width-small-1-1 uk-width-xlarge-2-3 ">
 		<div class="uk-grid uk-grid-small uk-flex uk-flex-middle uk-flex-center" data-uk-grid-margin="">
 			<div class="uk-width-large-1-2 uk-width-medium-1-2 uk-width-small-9-10 uk-text-center-small g5-padding-top g5-padding-small-bottom">
-				<a href="/" class="uk-display-block"><img src="img/logo.svg" alt=" " width="600" height="auto" class="uk-display-block uk-align-center uk-margin-bottom-remove"></a>
+				<img src="img/logo.svg" alt=" " width="600" height="auto" class="uk-display-block uk-align-center uk-margin-bottom-remove">
 			</div>
 			<div class="uk-width-large-1-2 uk-width-medium-1-2 uk-text-right uk-hidden-small g5-hidemobile">
 					<div class="uk-text-right uk-text-center-small">
 					<div class="uk-grid uk-grid-large uk-flex uk-flex-middle uk-flex-center">
 						<div class="uk-width-large-1-2 uk-width-medium-1-1">
-							<a href="https://www.google.com/maps/place/Spine+and+Orthopedic+Rehab,+1919+Electric+Rd+SW,+Roanoke,+VA+24018" target="_blank" class='uk-h4  g5-color-primary-shade g5-hover-color-primary'><i class="uk-icon-map-marker g5-color-primary uk-display-inline"></i> <div class='rfa rfa_162 uk-display-inline'>1919 Electric Rd SW<br />
+							<a href="https://www.google.com/maps?q=Spine+and+Orthopedic+Rehab+1919+Electric+Rd+SW+24018" target="_blank" class='uk-h4  g5-color-primary-shade g5-hover-color-primary'><i class="uk-icon-map-marker g5-color-primary uk-display-inline"></i> <div class='rfa rfa_162 uk-display-inline'>1919 Electric Rd SW<br />
 Roanoke, VA 24018</div></a><br>
 						</div>
 						<div class="uk-width-large-1-2 uk-width-medium-1-1">
@@ -781,72 +796,7 @@ Roanoke, VA 24018</div></a><br>
 		</div>
 	</div></div>
 </section>
-<section id="tm-recovery-process" class='uk-block'>
-<div class="uk-container uk-container-center tm-padding-large-all" >
-<h2 class="uk-text-center uk-h1  tm-gradient-text tm-uppercase uk-margin-remove g5-color-primary-shade "> The Recovery Process </h2>
-<h5 class="uk-text-center uk-h2  g5-color-black uk-margin-remove  " style="font-size: 30px;line-height: 30px;" > Learn about the 5 phases of recovery</h5>
-<p class='uk-text-center uk-margin-large-bottom'> Click on a  step to learn more.</p>
-<ul class='uk-list uk-flex uk-flex-middle uk-flex-space-between uk-position-relative' data-uk-switcher="{connect:'#tm-recovery-switcher'}">
-    <li class=""><figure><span class="uk-flex uk-flex-middle uk-flex-center uk-height-1-1">1</span><div><a href="#"></a></div></figure></li>
-    <li class=""><figure><span class="uk-flex uk-flex-middle uk-flex-center uk-height-1-1">2</span><div><a href="#"></a></div></figure></li>
-    <li class=""><figure><span class="uk-flex uk-flex-middle uk-flex-center uk-height-1-1">3</span><div><a href="#"></a></div></figure></li>
-    <li class=""><figure><span class="uk-flex uk-flex-middle uk-flex-center uk-height-1-1">4</span><div><a href="#"></a></div></figure></li>
-    <li class=""><figure><span class="uk-flex uk-flex-middle uk-flex-center uk-height-1-1">5</span><div><a href="#"></a></div></figure></li>
-</ul>
-<ul id="tm-recovery-switcher" class=" uk-switcher uk-container uk-container-center tm-custom-boxshadow  g5-padding-large uk-text-center-small" style="box-shadow: 0px 3px 3px 0px #999;background: rgb(255 255 255 / 0.9);">
-    <li>
-        <ul class="uk-grid" data-uk-grid-margin>
-            <li class='uk-width-medium-2-3'>
-                <div class=' uk-hidden-small uk-text-bold uk-h1 uk-margin-bottom tm-uppercase g5-color-primary'>Pain Relief</div>
-                <div class=' uk-visible-small uk-text-bold uk-h2 uk-margin-bottom tm-uppercase g5-color-primary'>Pain Relief</div>
-                <p>Reducing pain, swelling, and inflammation are common goals in this phase of recovery. Injury protection, elevation, appropriate medications, compression, and patient education are important.</p>
-            </li>
-            <li class='uk-width-medium-1-3'><img src="img/stock-8484.jpg?v=1" class="" alt="physical therapy Philomath OR"></li>
-        </ul>
-    </li>
-    <li>
-        <ul class="uk-grid" data-uk-grid-margin>
-            <li class='uk-width-medium-2-3'>
-                <div class='uk-hidden-small uk-text-bold uk-h1 uk-margin-bottom tm-uppercase g5-color-primary'>Introduce Movement</div>
-                <div class='uk-visible-small uk-text-bold uk-h2 uk-margin-bottom tm-uppercase g5-color-primary'>Introduce Movement</div>
-                <p>Pain-free passive, manual therapy, active range of motion, and cardiorespiratory exercises, are indicated here. Education about pain and a positive attitude may help.</p>
-            </li>
-            <li class='uk-width-medium-1-3'><img src="img/stock-7580.jpg" class="" alt="physical therapy Philomath OR"></li>
-        </ul>
-    </li>
-    <li>
-        <ul class="uk-grid" data-uk-grid-margin>
-            <li class='uk-width-medium-2-3'>
-                <div class='uk-hidden-small uk-text-bold uk-h1 uk-margin-bottom tm-uppercase g5-color-primary'style="font-size: 37px;">Strengthening</div>
-                <div class='uk-visible-small uk-text-bold uk-h2 uk-margin-bottom tm-uppercase g5-color-primary'>Strengthening</div>
-                <p>Progressive loading of healing soft tissues, the reintroduction of low-stress neuromuscular reeducation, balance training, and basic functional activities are part of this rehabilitation phase.</p>
-            </li>
-            <li class='uk-width-medium-1-3'><img src="img/stock-7601.jpg" class="" alt="physical therapy Philomath OR"></li>
-        </ul>
-    </li>
-    <li>
-        <ul class="uk-grid" data-uk-grid-margin>
-            <li class='uk-width-medium-2-3'>
-                <div class='uk-hidden-small uk-text-bold uk-h1 uk-margin-bottom tm-uppercase g5-color-primary'>Functional Retraining</div>
-                <div class='uk-visible-small uk-text-bold uk-h2 uk-margin-bottom tm-uppercase g5-color-primary'>Functional Retraining</div>
-                <p>Progressing strengthening exercises, improving flexibility, and advanced balance exercises are part of phase 4. Resuming functional movement (e.g. sports movements) occurs in this phase.</p>
-            </li>
-            <li class='uk-width-medium-1-3'><img src="img/stock-7493.jpg" class="" alt="physical therapy Philomath OR"></li>
-        </ul>
-    </li>
-    <li>
-        <ul class="uk-grid" data-uk-grid-margin>
-            <li class='uk-width-medium-2-3'>
-                <div class='uk-hidden-small uk-text-bold uk-h1 uk-margin-bottom tm-uppercase g5-color-primary'>Recovery & Prevention</div>
-                <div class='uk-visible-small uk-text-bold uk-h2 uk-margin-bottom tm-uppercase g5-color-primary'>Recovery & Prevention</div>
-                <p>Functional movements are progressed, a controlled re-introduction to sports or challenging environments is initiated. Continued strengthening, flexibility, balance, endurance, and goal-specific training occurs during this phase. Education and future injury prevention are discussed.</p>
-            </li>
-            <li class='uk-width-medium-1-3'><img src="img/stock-7947.jpg" class="" alt="physical therapy Philomath OR"></li>
-        </ul>
-    </li>
-</ul>
-</div>
-</section><footer id="footer" class="g5-background-primary">
+<footer id="footer" class="g5-background-primary">
 	<div class='uk-container uk-container-center g5-padding-bottom'>
 		<div class="uk-grid uk-grid-medium uk-flex uk-flex-center" data-uk-grid-margin>
 			<div class="uk-width-1-1">
@@ -863,13 +813,13 @@ Roanoke, VA 24018</div></a><br>
 							<i class="uk-icon-map-marker g5-color-warning uk-display-inline"></i>
 						</div>
 						<div class="uk-width-medium-5-6">
-							<a href="https://www.google.com/maps/place/Spine+and+Orthopedic+Rehab,+1919+Electric+Rd+SW,+Roanoke,+VA+24018" target="_blank" class=''> <div class='rfa rfa_162 g5-color-white g5-hover-color-warning  g5-transition uk-display-inline'>1919 Electric Rd SW<br />
+							<a href="https://www.google.com/maps?q=Spine+and+Orthopedic+Rehab+1919+Electric+Rd+SW+24018" target="_blank" class=''> <div class='rfa rfa_162 g5-color-white g5-hover-color-warning  g5-transition uk-display-inline'>1919 Electric Rd SW<br />
 Roanoke, VA 24018</div></a>
 						</div>
 					</div>
 					<div class="uk-visible-small">
 						<i class="uk-visible-small uk-icon-map-marker g5-color-warning uk-display-inline"></i>
-						<a href="https://www.google.com/maps/place/Spine+and+Orthopedic+Rehab,+1919+Electric+Rd+SW,+Roanoke,+VA+24018" target="_blank">
+						<a href="https://www.google.com/maps?q=Spine+and+Orthopedic+Rehab+1919+Electric+Rd+SW+24018" target="_blank">
 							<div class='rfa rfa_162  g5-color-white g5-hover-color-warning  g5-transition uk-display-inline'>1919 Electric Rd SW<br />
 Roanoke, VA 24018</div>						</a>
 					</div>
