@@ -947,8 +947,11 @@ Roanoke, VA 24018</div></a><br>
 				<div id='nl-title' class='uk-h1'>Newsletter Signup</div><form class='uk-form' id='nl-signup' method='POST'><fieldset><div class='uk-form-row' style='margin: 10px 0;'><label class='g5-nlsignup-email-label' for='nl-email'>Email: </label><input type='email' id='nl-email' name='email' placeholder='' ></div> <div class='uk-form-row' style='margin: 10px 0;'><button id='nl-button' class='uk-button uk-button-primary'>Signup</button></div></fieldset></form>			</div>
 		</div> -->
 		<div class="uk-text-center g5-padding uk-flex uk-flex-middle uk-flex-center">
-			<p class='g5-color-white uk-text-small'>&copy; Copyright 2025 Spine and Orthopedic Rehab, All Rights Reserved. <a href="https://www.e-rehab.com" class="g5-color-white g5-hover-color-success">Powered by E-Rehab.</a> | <a href="/sitemap/" class="g5-color-white g5-hover-color-success">Sitemap</a></p>
+			<p class='g5-color-white uk-text-small'>&copy; Copyright <span id="year"></span> Spine and Orthopedic Rehab, All Rights Reserved.</p>
 		</div>
+		<script>
+		document.getElementById('year').textContent = new Date().getFullYear();
+		</script>
 	</div>
 </footer><div style="display:none" id="practiceid">128</div>
 <script type="text/javascript">
