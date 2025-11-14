@@ -519,10 +519,78 @@ Before implementation, choose the best approach based on:
 
 ---
 
+## PHASE 5: Cleanup Unused Code
+
+**Status:** ⏳ Pending
+
+### Overview
+Mark and document unused code elements for removal. These don't break anything but serve no purpose on the static site.
+
+### Items to Remove
+
+#### 1. Clicky Analytics (Line 954-965)
+**Purpose:** Tracking/analytics
+**Impact:** None - just tracking code
+**Action:** Mark for deletion
+```javascript
+// Lines 954-965 can be removed:
+// var clicky_site_ids = clicky_site_ids || [];
+// clicky_site_ids.push(247202);
+// ... script loader ...
+// <noscript> pixel tracker
+```
+
+#### 2. Newsletter Signup Code (Dead Links in HTML)
+**Status:** Not used - forms are commented out
+**Locations:**
+- Line 937-947: Home newsletter section (commented)
+- Line 941-947: Modal newsletter (commented)
+
+**Action:** Mark commented HTML for deletion (safe to leave for now)
+
+#### 3. Newsletter JavaScript (nlSignup.js)
+**Status:** Form references broken (no backend)
+**Current:** Calls `https://ptclinic.com/site/signup_processorORM.php`
+**Action:** Mark entire file for deletion or replace with stub
+**File Size:** ~1.2KB
+
+#### 4. Background Images from stock.imgix.net
+**Status:** External dependency, need to download
+**Locations:**
+- Line 440: CTA section background `url(https://stock.imgix.net/10891)`
+- Line 772: Duplicate CTA section background
+
+**Action:** Download and replace with local image
+**File:** `img/stock-10891.jpg` (already migrated from PHASE 1)
+**CSS Update:** Change `url(https://stock.imgix.net/10891)` → `url(img/stock-10891.jpg)`
+
+### Cleanup Checklist
+- [ ] Remove Clicky analytics code (lines 954-965)
+- [ ] Document commented newsletter HTML for removal (lines 937-947, 941-947)
+- [ ] Mark nlSignup.js as candidate for deletion
+- [ ] Replace background image URLs with local paths (lines 440, 772)
+
+---
+
+## What Works Locally As-Is
+
+The following external resources work fine and should be kept:
+- ✅ **YouTube embeds** - Works with internet connection
+- ✅ **Google Fonts** - Works with internet, degraded gracefully
+- ✅ **CDN libraries** (jQuery, UIKit, etc.) - Standard CDN usage
+- ✅ **All local images** - Hosted in `/img/`
+- ✅ **CSS/JS files** - All local
+
+## Phase Summary
+
+- **PHASE 1** ✅: Image migration (external → local images)
+- **PHASE 2** ✅: Remove WordPress cruft
+- **PHASE 3** ✅: JavaScript cleanup & audit
+- **PHASE 4** ⏳: Google Maps migration (external API → alternative)
+- **PHASE 5** ⏳: Cleanup unused code (Clicky, newsletter)
+
 ## Notes
 - All migrated images use query string cache busting format: `img/filename.ext?v=1`
 - Original external URLs kept commented above if needed for reference
-- After each migration, verify the image loads correctly in browser
-- Phase 2 focuses on removing WordPress-specific code that's not needed in a static site
-- Phase 3 will reduce JavaScript payload by removing unused libraries
-- Phase 4 will eliminate API key dependencies and simplify the map implementation
+- Site works fully locally with these phases complete
+- Known external services (YouTube, Google Fonts, CDNs) work normally with internet
