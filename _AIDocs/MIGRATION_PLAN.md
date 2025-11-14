@@ -1,4 +1,60 @@
-# Image Migration Plan
+# Static HTML Site Migration Plan
+
+## PHASE 0: Initial Image & File Migration (Pre-Migration Plan)
+
+**Status:** ✅ Complete
+
+### Overview
+Before the formal migration plan was created, all external image URLs and JavaScript files were copied from external domains to local `/img/` directory and root directory. This foundational work established the local repository structure.
+
+### Work Completed
+- ✅ Downloaded all external images from:
+  - `blogsdir.imgix.net` (logos, icons, SVGs)
+  - `stock.imgix.net` (stock photography)
+  - External CDN images
+- ✅ Stored locally in `/img/` directory (30+ images, ~1.5MB)
+- ✅ Created `/dump/` directory with reference copies of:
+  - Original HTML template (`1000128.html`)
+  - All original external file references
+  - Legacy JavaScript and CSS files
+- ✅ Established foundation for subsequent migration phases
+
+### Files Migrated to Local
+**Images migrated to `/img/` directory:**
+- `logo.svg` (140KB)
+- `logo-white.svg` (158KB)
+- `spine-ortho-roanoke1.jpg` (121KB)
+- `1-hour.svg` (3.3KB)
+- `checked.svg` (1.1KB)
+- `clipboard.svg` (8.2KB)
+- `phone-call.svg` (2.3KB)
+- `elbow-brace.png` (111KB)
+- `stock-8078.jpg` (75KB)
+- `stock-6218.jpg` (131KB)
+- `stock-8475.jpg` (103KB)
+- `stock-10799.jpg` (148KB)
+- `stock-10891.jpg` (101KB)
+- `stock-11624.jpg` (94KB)
+- Plus 15+ additional stock images (200+KB total)
+
+**Other files migrated to root directory:**
+- CSS files (output.min.css, recovery-process.css, etc.)
+- JavaScript files (g5_master.js, nlSignup.js, etc.)
+- Cache/favicon files
+- Reference HTML copy
+
+### Reference Archive
+The `/dump/` directory served as a reference archive containing:
+- Original WordPress-generated HTML template
+- All original external URLs and file references
+- Legacy dependencies for auditing purposes
+- Backup of original state before cleanup
+
+**Note:** This directory was removed in final cleanup phase (commit edcfde1) as all useful files had been migrated locally and the reference was no longer needed.
+
+---
+
+# Image Migration Documentation
 
 ## Overview
 Migrate remaining external image URLs from `index.html` to local `/img` directory references. The goal is to eliminate external dependencies and serve all images locally.
@@ -6,6 +62,7 @@ Migrate remaining external image URLs from `index.html` to local `/img` director
 ---
 
 ## Already Migrated ✅
+All images were migrated in PHASE 0 and integrated into `index.html`:
 - `logo.svg`
 - `spine-ortho-roanoke1.jpg`
 - `1-hour.svg`
@@ -800,6 +857,7 @@ The site is now **more secure** (no exposed API keys), **simpler** (no custom JS
 
 ## Phase Summary
 
+- **PHASE 0** ✅: Initial image & file migration (Pre-migration plan)
 - **PHASE 1** ✅: Image migration (external → local images)
 - **PHASE 2** ✅: Remove WordPress cruft
 - **PHASE 3** ✅: JavaScript cleanup & audit
