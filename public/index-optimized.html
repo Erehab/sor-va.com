@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="en-US" class="uk-height-1-1">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="format-detection" content="telephone=no">
+  <link rel='shortcut icon' href='img/favicon.ico?v=1' type='image/x-icon'/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <!-- iPhone -->
+  <link rel="apple-touch-icon" href="img/icon-57x57.png?v=1" sizes="57x57"/>
+  <link rel="apple-touch-startup-image" media="(device-width: 320px)" href="img/apple-touch-startup-image-320x460.png?v=1">
+  <!-- iPhone (Retina) -->
+  <link rel="apple-touch-icon" href="img/icon-114x114.png?v=1" sizes="114x114"/>
+  <link rel="apple-touch-startup-image" media="(device-width: 320px) and (-webkit-device-pixel-ratio: 2)" href="img/apple-touch-startup-image-640x920.png?v=1">
+  <title>Home | </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--[if lt IE 9]>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <![endif]-->
+  <meta name='robots' content='max-image-preview:large' />
+  <meta name="theme-color" content="#2067a5">
+  <style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
+
+  <!-- PERFORMANCE: Resource hints for CDN -->
+  <link rel='dns-prefetch' href='//cdnjs.cloudflare.com' />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
+  <!-- PERFORMANCE: Preload critical resources -->
+  <link rel="preload" href="fonts/lato-400.ttf" as="font" type="font/ttf">
+  <link rel="preload" href="img/logo.svg" as="image">
+  <link rel="preload" href="img/spine-ortho-roanoke1.jpg" as="image">
+
+  <!-- PERFORMANCE: Load non-critical CSS asynchronously -->
+  <link rel="preload" href="output.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="output.min.css"></noscript>
+
+  <!-- PERFORMANCE: Inline critical CSS -->
+  <style id='uikitcore-inline-css' type='text/css'>
+/* ===== Local Fonts ===== */
+@font-face {
+  font-family: 'Lato';
+  src: url(fonts/lato-400.ttf) format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Lato';
+  src: url(fonts/lato-300.ttf) format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Lato';
+  src: url(fonts/lato-700.ttf) format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Lato';
+  src: url(fonts/lato-italic-300.ttf) format('truetype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Lato';
+  src: url(fonts/lato-italic-400.ttf) format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Lato';
+  src: url(fonts/lato-italic-700.ttf) format('truetype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Oswald';
+  src: url(fonts/oswald-300.ttf) format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Oswald';
+  src: url(fonts/oswald-400.ttf) format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ===== Global Styles ===== */
+html { letter-spacing: normal; }
+body { overflow-x: hidden; }
+
+/* ===== Typography ===== */
+.tm-uppercase { text-transform: uppercase; }
+
+/* ===== Buttons ===== */
+.uk-button {
+  -webkit-appearance: none;
+  margin: 0;
+  border: none;
+  overflow: visible;
+  font: inherit;
+  color: #1A1A1A;
+  text-transform: none;
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 3px 12px;
+  background: #eee;
+  vertical-align: middle;
+  line-height: 30px;
+  min-height: 30px;
+  font-size: 1rem;
+  text-decoration: none;
+  text-align: center;
+}
+
+/* ===== Custom Components ===== */
+.tm_plan_number {
+  width: 50px;
+  height: 50px;
+  margin-top: -55px;
+  line-height: 50px;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.09);
+}
+
+/* ===== Overlays ===== */
+.uk-overlay-fade {
+  opacity: 0.8;
+}
+
+.uk-overlay-background {
+  background-color: rgba(67, 81, 94, 0.5);
+}
+
+.uk-overlay-background:hover {
+  background-color: rgba(67, 81, 94, 0.8);
+}
+
+#footer .uk-width-medium-5-6 {
+  width: 94% !important;
+}
+
+#footer .uk-width-medium-1-6 {
+  width: 4% !important;
+}
+
+/* Fix image sizing in Getting Started section */
+#tm-plan .uk-panel img {
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Fix image sizing in Professional Services carousel */
+#tm-service figure img {
+  height: 280px;
+  width: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Header responsive adjustment */
+@media (max-width: 1399px) {
+  #header .uk-container {
+    width: 100% !important;
+  }
+}
+
+/* Scroll fade initial state */
+.scroll-fade {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.scroll-fade.uk-animation-fade {
+  opacity: 1;
+}
+
+
+.glide__slide figure.uk-overlay {
+  max-height: 240px;
+  overflow: hidden;
+}
+
+.glide__slide figure.uk-overlay img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+/* Carousel container positioning */
+#services-carousel {
+	width:90%;
+	margin: 0 auto;
+}
+
+
+/* Arrow positioning - outside track, inside glide container */
+#carousel-prev,
+#carousel-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+#carousel-prev {
+  left: 0;
+}
+
+#carousel-next {
+  right: 0;
+}
+  </style>
+
+  <!-- PERFORMANCE: Load Glide CSS asynchronously -->
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.2.0/css/glide.core.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.2.0/css/glide.theme.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.2.0/css/glide.core.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.2.0/css/glide.theme.min.css">
+  </noscript>
+
+  <!-- Polyfill for browsers that don't support preload with onload -->
+  <script>
+  /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+  !function(n){"use strict";n.loadCSS||(n.loadCSS=function(){});var o=loadCSS.relpreload={};if(o.support=function(){var e;try{e=n.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),o.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.addEventListener?t.removeEventListener("load",a):t.attachEvent&&t.detachEvent("onload",a),t.setAttribute("onload",null),t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"},setTimeout(a,3e3))},!o.support()){o.poly=function(){if(!n.document.getElementsByTagName("link"))return;for(var t=n.document.getElementsByTagName("link"),e=0;e<t.length;e++){var a=t[e];"preload"!==a.rel||"style"!==a.getAttribute("as")||a.getAttribute("data-loadcss")||(a.setAttribute("data-loadcss",!0),o.bindMediaToggle(a))}},o.poly();var t=n.setInterval(o.poly,500);n.addEventListener?n.addEventListener("load",function(){o.poly(),n.clearInterval(t)}):n.attachEvent&&n.attachEvent("onload",function(){o.poly(),n.clearInterval(t)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:n.loadCSS=loadCSS}("undefined"!=typeof global?global:this);
+  </script>
+</head>
+<body class="uk-height-1-1 page-home desktop chrome">
+
+<!-- ===== HEADER SECTION ===== -->
+<header id="header" class="g5-background-white">
+  <div class="uk-container-center uk-container g5-padding-medium-left g5-padding-medium-right uk-width-large-1-1 uk-width-medium-1-1 uk-width-small-1-1 uk-width-xlarge-2-3 ">
+    <div class="uk-grid uk-grid-small uk-flex uk-flex-middle uk-flex-center">
+      <div class="uk-width-large-1-2 uk-width-medium-1-2 uk-width-small-1-1 uk-text-center-small g5-padding-top g5-padding-small-bottom">
+        <img src="img/logo.svg" alt=" " width="600" height="200" loading="eager" class="uk-display-block uk-align-center uk-margin-bottom-remove">
+      </div>
+      <div class="uk-width-large-1-2 uk-width-medium-1-2 uk-text-right uk-hidden-small g5-hidemobile">
+        <div class="uk-text-right uk-text-center-small">
+          <div class="uk-grid uk-grid-large uk-flex uk-flex-middle uk-flex-center">
+            <div class="uk-width-large-1-2 uk-width-medium-1-1">
+              <a href="https://www.google.com/maps?q=Spine+and+Orthopedic+Rehab+1919+Electric+Rd+SW+24018" target="_blank" class='uk-h4  g5-color-primary-shade g5-hover-color-primary'><i class="uk-icon-map-marker g5-color-primary uk-display-inline"></i> <div class='rfa rfa_162 uk-display-inline'>1919 Electric Rd SW<br />
+Roanoke, VA 24018</div></a><br>
+            </div>
+            <div class="uk-width-large-1-2 uk-width-medium-1-1">
+              <a href="tel:5407255300" class=" uk-margin-bottom uk-h3 g5-color-primary-shade g5-hover-color-primary "><i class="uk-icon-phone g5-color-primary uk-display-inline "></i> <div class='rfa rfa_162_phoneonly uk-display-inline'>(540) 725-5300</div></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Mobile Contact Info -->
+    <div class="uk-visible-small uk-text-center g5-padding-bottom">
+      <div class="uk-grid uk-grid-small uk-flex uk-flex-center uk-flex-middle">
+        <div class="uk-width-small-1-1">
+          <a href="https://www.google.com/maps?q=Spine+and+Orthopedic+Rehab+1919+Electric+Rd+SW+24018" target="_blank" class='uk-h4 g5-color-primary-shade g5-hover-color-primary'><i class="uk-icon-map-marker g5-color-primary uk-display-inline"></i> <div class='rfa rfa_162 uk-display-inline'>1919 Electric Rd SW<br />Roanoke, VA 24018</div></a>
+          <div class="g5-padding-top">
+            <a href="https://www.google.com/maps?q=Spine+and+Orthopedic+Rehab+1919+Electric+Rd+SW+24018" target="_blank" class="uk-button">Google Maps</a>
+          </div>
+        </div>
+        <div class="uk-width-small-1-1">
+          <a href="tel:5407255300" class="uk-h3 g5-color-primary-shade g5-hover-color-primary"><i class="uk-icon-phone g5-color-primary uk-display-inline"></i> <div class='rfa rfa_162_phoneonly uk-display-inline'>(540) 725-5300</div></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ===== HERO SECTION ===== -->
+<section id="tm-home-ss" style="height: 650px; position: relative; overflow: hidden;" class="uk-hidden-small">
+  <img src="img/spine-ortho-roanoke1.jpg" alt="Spine and Orthopedic Rehab" style="width: 100%; height: 100%; object-fit: cover; display: block;" width="1280" height="650" loading="eager" />
+  <div class="uk-overlay-panel g5-padding uk-overlay-fade uk-flex uk-flex-bottom uk-flex-left" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0;">
+    <div class="g5-padding-all " style="background: #fff;">
+      <div class="uk-text-center-small">
+        <h1 class="tm-hero-text g5-color-primary tm-uppercase">Personalized Physical Therapy, <br> Chiropractic, & Acupuncture</h1>
+        <p class="uk-h3 g5-color-primary-shade uk-margin-remove">For Rapid Pain Relief & Recovery Of Function</p>
+        <p class="uk-h3 g5-color-primary-shade uk-margin-remove">We Provide You With The Path To Enjoying A Pain-Free, Independent Life Again</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MOBILE HERO -->
+<section id="tm-home-ss-mobile" style="height: 500px; position: relative; overflow: hidden;" class="uk-visible-small">
+  <img src="img/spine-ortho-roanoke1.jpg" alt="Spine and Orthopedic Rehab" style="width: 100%; height: 100%; object-fit: cover; display: block;" width="400" height="500" loading="eager" />
+  <div class="uk-overlay-panel g5-padding uk-overlay-fade uk-flex uk-flex-bottom uk-flex-left" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0;">
+    <div class="g5-padding-all " style="background: #fff;">
+      <div class="uk-text-center-small">
+        <span class=" uk-h4 g5-color-primary tm-uppercase   uk-margin-top ">Personalized Physical Therapy, <br> Chiropractic, & Acupuncture</span>
+        <p class="g5-color-primary-shade  uk-margin-remove">For Rapid Pain Relief & Recovery Of Function</p>
+        <p class="g5-color-primary-shade  uk-margin-remove">We Provide You With The Path To Enjoying A Pain-Free, Independent Life Again</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== VALUE PROPOSITION SECTION ===== -->
+<section id="tm-value-stack" class='uk-block'>
+  <div class=" uk-container-center  g5-padding-medium-left g5-padding-medium-right uk-width-large-1-1 uk-width-medium-1-1 uk-width-small-1-1 uk-width-xlarge-5-6">
+    <ul class="uk-grid uk-grid-width-medium-1-3 uk-grid-width-large-1-3 uk-grid-large uk-flex uk-flex-middle"="">
+      <li>
+        <div class="">
+          <div class="g5-border-small-all g5-border-primary g5-padding">
+            <img src="img/1-hour.svg" width="80" height="80" loading="lazy" class="uk-display-block uk-align-center" alt="physical therapy Herriman UT">
+            <p class="uk-text-center uk-h2"> <span class="g5-color-primary-shade uk-display-block g5-padding tm-uppercase"> Full One-Hour Initial <br>  Evaluation </span> <span class="tm-text-body uk-h3 g5-color-warning">We Take The Time To Listen To You</span></p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="">
+          <div class="g5-border-small-all g5-border-primary g5-padding">
+            <img src="img/checked.svg" width="80" height="80" loading="lazy" class="uk-display-block uk-align-center" alt="physical therapy Herriman UT">
+            <p class="uk-text-center uk-h2"> <span class="g5-color-primary-shade uk-display-block g5-padding tm-uppercase"> The Right Treatments for Faster Results </span> <span class="tm-text-body uk-h3 g5-color-warning">We Combine Physical Therapy, Chiropractic, & Acupuncture</span></p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="">
+          <div class="g5-border-small-all g5-border-primary g5-padding">
+            <img src="img/clipboard.svg" width="80" height="80" loading="lazy" class="uk-display-block uk-align-center" alt="physical therapy Herriman UT">
+            <p class="uk-text-center uk-h2"> <span class="g5-color-primary-shade uk-display-block g5-padding tm-uppercase"> Most Insurance <br> Plans Accepted</span>  <span class="tm-text-body uk-h3 g5-color-warning">Medicare, Private Insurances, Worker's Comp</span></p>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== PAIN POINTS SECTION ===== -->
+<section id="tm-stakes" class="g5-padding-large-top">
+  <div class="" style="background: rgb(245 245 245 / 50%);">
+    <div class="uk-container uk-container-center">
+      <div id="tm-stakes-box" class='uk-grid uk-grid-large uk-grid-match uk-flex uk-flex-middle'>
+        <div id="tm-stakes-grid" class="uk-width-small-1-1 uk-width-medium-1-1 uk-width-large-1-2">
+          <p class="tm-title uk-hidden-small"><span class="uk-h1 g5-color-primary-shade">Are You Having</span><br><span class="g5-color-primary uk-h1 tm-uppercase">Trouble with Daily Activities?</span></p>
+          <p class="uk-visible-small uk-text-center-small "><span class="uk-h1 g5-color-primary-shade">Are You Having</span><br><span class="g5-color-primary uk-h1 tm-uppercase">Trouble with Daily Activities?</span></p>
+          <div class="uk-width-small-1-1 uk-width-medium-1-1 uk-width-large-1-2 uk-visible-small">
+            <img src="img/elbow-brace.png?v=1" class="tm-stakes-img uk-align-center" alt=" " width="250" height="250" loading="lazy">
+          </div>
+          <ul id='tm-welcome-list' class='uk-list uk-text-large g5-color-black uk-list-line uk-flex uk-flex-column uk-flex-space-between g5-list-right'>
+            <li class='g5-padding-top g5-padding-bottom'> Does It Feel Like No One Is Listening?</strong> </li>
+            <li class='g5-padding-top g5-padding-bottom'> Not Sure What's Causing Your Pain?</li>
+            <li class='g5-padding-top g5-padding-bottom'> Missing Out on Fun with Family & Friends?</strong> </li>
+            <li class='g5-padding-top g5-padding-bottom'> Want to Avoid Unnecessary Drugs & Surgery?</li>
+          </ul>
+        </div>
+        <div class="uk-width-small-1-1 uk-width-medium-1-1 uk-width-large-1-2 uk-hidden-small">
+          <img src="img/elbow-brace.png?v=1" class="tm-stakes-img uk-align-center" alt=" " width="250" height="250" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABOUT / BENEFITS SECTION ===== -->
+<section id="tm-benefits" class="uk-block g5-background-primary">
+  <div class="uk-container-center uk-width-large-1-1 uk-width-medium-1-1 uk-width-small-1-1 uk-width-xlarge-3-4 g5-padding-left g5-padding-right g5-padding-large-top g5-padding-large-bottom">
+    <div class="uk-grid uk-grid-large uk-flex uk-flex-middle">
+      <div class="uk-width-large-1-2 uk-width-medium-1-1">
+        <div class="g5-video-wrapper">
+          <iframe loading="lazy" src="https://www.youtube.com/embed/c5XzLQUNFOI?si=qSTALCj5-9ZoM7Tv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="uk-width-large-1-2 uk-width-medium-1-1">
+        <h2 class="uk-margin-remove g5-color-white uk-text-center-small ">We've Been</h2>
+        <h1 class="tm-title uk-margin-remove uk-text-center-small g5-color-warning tm-uppercase">Serving Roanoke Valley Since 1995 & Practicing Since 1987</h1>
+        <h4 class="tm-title uk-margin-remove uk-text-center-small g5-color-white ">SOR has the unique ability to combine physical therapy, chiropractic and acupuncture/dry needling all from one experienced provider.</h4>
+        <div class="    uk-margin-top g5-padding-large-left">
+          <p class="g5-color-white uk-margin-remove ">At Spine and Orthopedic Rehab, your experience will include:</p>
+          <ul class="uk-list-space g5-color-white g5-list-right">
+            <li class="g5-padding-bottom">A thorough evaluation identifying all components of your unique problem</li>
+            <li class="g5-padding-bottom">Education focused on how you can contribute to your own healing</li>
+            <li class="g5-padding-bottom">A comprehensive treatment plan that may include manual "hands-on" therapy, pain-relieving modalities and exercises appropriate for your condition</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GETTING STARTED SECTION ===== -->
+<section id="tm-plan" class="uk-block uk-block-muted">
+  <div class="uk-container-center uk-container tm-padding-large-all">
+    <h1 class='uk-text-center g5-color-primary tm-uppercase'>Getting Started Is Easy</h1>
+    <ul class='uk-margin-large-top uk-grid uk-grid-width-large-1-3 uk-grid-width-medium-1-2 uk-flex uk-flex-center uk-grid-match'>
+      <li class='g5-padding-bottom g5-padding-top'>
+        <div class='uk-panel uk-position-relative g5-background-primary'>
+          <img alt="" src="img/stock-8078.jpg" alt="physical therapy Las Vegas NV" width="400" height="300" loading="lazy">
+          <div class="g5-padding uk-text-center uk-text-center-small uk-position-relative" style="z-index:1;">
+            <div  class=" tm_plan_number uk-align-center g5-border-small-all g5-border-white g5-background-success g5-padding-small-all uk-h2 g5-color-white"> 1 </div>
+            <div class='g5-color-white uk-text-large'>Contact Us</div>
+          </div>
+        </div>
+      </li>
+      <li class='g5-padding-bottom g5-padding-top'>
+        <div class='uk-panel uk-position-relative g5-background-primary'>
+          <img alt="" src="img/stock-6218.jpg" alt="physical therapy Las Vegas NV" width="400" height="300" loading="lazy">
+          <div class="g5-padding uk-text-center uk-text-center-small uk-position-relative" style="z-index:1;">
+            <div  class=" tm_plan_number uk-align-center g5-border-small-all g5-border-white g5-background-success g5-padding-small-all uk-h2 g5-color-white"> 2 </div>
+            <div class='g5-color-white uk-text-large'>Schedule An Appointment</div>
+          </div>
+        </div>
+      </li>
+      <li class='g5-padding-bottom g5-padding-top'>
+        <div class='uk-panel uk-position-relative g5-background-primary'>
+          <img alt="" src="img/stock-8475.jpg" alt="physical therapy Las Vegas NV" width="400" height="300" loading="lazy">
+          <div class="g5-padding uk-text-center uk-text-center-small uk-position-relative" style="z-index:1;">
+            <div  class=" tm_plan_number uk-align-center g5-border-small-all g5-border-white g5-background-success g5-padding-small-all uk-h2 g5-color-white"> 3 </div>
+            <div class='g5-color-white uk-text-large'>Come In And Meet With Your Therapist</div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== CALL TO ACTION SECTION ===== -->
+<section id="tm-cta" style="background-image: url(img/stock-10891.jpg?v=1);background-position: center;background-size: cover;background-attachment:fixed">
+  <div class="uk-block" style="background: rgb(255 255 255 / 80%);">
+    <div class="uk-container uk-container-center">
+      <div class="uk-grid uk-text-center uk-flex uk-flex-center uk-flex-middle">
+        <div class="uk-width-medium-1-2">
+          <div class="scroll-fade">
+            <div class="uk-h2 g5-color-primary uk-text-bold">Ready to Feel Better? Schedule Your Initial Evaluation & <br><span class="uk-h1 tm-uppercase g5-color-primary-shade"> Let's Make Things Happen!</span></div>
+          </div>
+        </div>
+        <div class="uk-width-medium-1-2">
+          <div >
+            <img src="img/phone-call.svg?v=1" class='uk-display-block uk-align-center' alt='physical therapy Irvine CA' width='70' height='70' loading="lazy">
+            <h2 class="uk-h1 g5-color-warning tm-uppercase"> Call Now</h2>
+            <div><a class="g5-color-black" href="tel:5407255300"><div class='rfa rfa_162_phoneonly g5-color-black uk-display-inline uk-h1'>(540) 725-5300</div></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SPECIALIZATIONS SECTION ===== -->
+<section id="tm-areas" class="uk-block g5-background-white ">
+  <div class="uk-container-center uk-container">
+    <div class="uk-panel uk-panel-box g5-padding-large g5-background-primary ">
+      <div class="uk-margin-bottom uk-text-center">
+        <h2 class="uk-hidden-small uk-h1 g5-color-white uk-margin-remove g5-padding-bottom uk-text-center-small tm-uppercase">We Specialize In:</h2>
+        <h2 class=" uk-visible-small uk-h2 g5-color-white uk-margin-remove g5-padding-bottom uk-text-center-small tm-uppercase">We Specialize In:</h2>
+      </div>
+      <div class="uk-grid ">
+        <div class="uk-width-medium-1-2">
+          <ul class="g5-list-check uk-list-space">
+            <li><p  class="g5-color-white g5-padding-small-bottom ">Sports Injuries</p></li>
+            <li><p  class="g5-color-white g5-padding-small-bottom">Neck and Back Pain / Sciatica </p></li>
+            <li><p  class="g5-color-white g5-padding-small-bottom">Sprains and Strains </p></li>
+            <li><p  class="g5-color-white g5-padding-small-bottom">Arthritis, Tendonitis, Bursitis Issues</p></li>
+            <li><p  class="g5-color-white g5-padding-small-bottom">Walking and Balance Disorders</p></li>
+          </ul>
+        </div>
+        <div class="uk-width-medium-1-2 tm-how-we-treat-1">
+          <ul class="g5-list-check  uk-list-space">
+            <li><p  class="g5-color-white g5-padding-small-bottom ">Work Related Injuries (Workers' Compensation)</p></li>
+            <li><p  class="g5-color-white g5-padding-small-bottom ">Titlest Fitness Programs</p></li>
+            <li><p  class="g5-color-white g5-padding-small-bottom">Sports Performance Programs </p></li>
+            <li><p  class="g5-color-white g5-padding-small-bottom">Senior Health & Fitness Enhancement Programs</p></li>
+            <li><p  class="g5-color-white g5-padding-small-bottom">Post-Surgical Rehab Programs</p></li>
+            <li><p  class="g5-color-white g5-padding-small-bottom">And more..</p></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROFESSIONAL SERVICES CAROUSEL ===== -->
+<section id='tm-service' class='uk-block uk-block-muted'>
+  <div class='uk-container-center uk-container'>
+    <h2 class='uk-text-center g5-color-primary-shade uk-h1  tm-uppercase'>Professional Services We Provide:</h2>
+	  <div style="position: relative">
+    <div id="services-carousel">
+	    <div class="glide">
+		    <div class="glide__track" data-glide-el="track">
+        <ul class="glide__slides" style="margin: 0">
+          <li class='glide__slide'>
+            <figure class="uk-overlay">
+              <img src="img/stock-11624.jpg" alt='' width='500' height='280' loading='lazy' class=''>
+              <figcaption class="uk-overlay-panel  uk-overlay-background uk-flex uk-flex-center uk-flex-middle uk-text-center">
+                <div>
+                  <h3 class='tm-uppercase g5-color-white'>Orthopedic Physical Therapy</h3>
+                </div>
+              </figcaption>
+            </figure>
+          </li>
+          <li class='glide__slide'>
+            <figure class="uk-overlay">
+              <img src="img/stock-10799.jpg" alt='' width='500' height='280' loading='lazy' class=''>
+              <figcaption class="uk-overlay-panel  uk-overlay-background uk-flex uk-flex-center uk-flex-middle uk-text-center">
+                <div>
+                  <h3 class='tm-uppercase g5-color-white'>Sports Medicine & Rehabilitation  </h3>
+                </div>
+              </figcaption>
+            </figure>
+          </li>
+          <li class='glide__slide'>
+            <figure class="uk-overlay">
+              <img src="img/stock-11011.jpg?v=1" alt='' width='500' height='280' loading='lazy' class=''>
+              <figcaption class="uk-overlay-panel  uk-overlay-background uk-flex uk-flex-center uk-flex-middle uk-text-center">
+                <div>
+                  <h3 class='tm-uppercase g5-color-white'>Balance Therapy  </h3>
+                </div>
+              </figcaption>
+            </figure>
+          </li>
+          <li class='glide__slide'>
+            <figure class="uk-overlay">
+              <img src="img/stock-12443.jpg?v=1" alt='' width='500' height='280' loading='lazy' class=''>
+              <figcaption class="uk-overlay-panel  uk-overlay-background uk-flex uk-flex-center uk-flex-middle uk-text-center">
+                <div>
+                  <h3 class='tm-uppercase g5-color-white'>Vestibular Rehabilitation  </h3>
+                </div>
+              </figcaption>
+            </figure>
+          </li>
+          <li class='glide__slide'>
+            <figure class="uk-overlay">
+              <img src="img/stock-8855.jpg?v=1" alt='' width='500' height='280' loading='lazy' class=''>
+              <figcaption class="uk-overlay-panel  uk-overlay-background uk-flex uk-flex-center uk-flex-middle uk-text-center">
+                <div>
+                  <h3 class='tm-uppercase g5-color-white'>Pelvic Floor Therapy  </h3>
+                </div>
+              </figcaption>
+            </figure>
+          </li>
+          <li class='glide__slide'>
+            <figure class="uk-overlay">
+              <img src="img/stock-7553.jpg?v=1" alt='' width='500' height='280' loading='lazy' class=''>
+              <figcaption class="uk-overlay-panel  uk-overlay-background uk-flex uk-flex-center uk-flex-middle uk-text-center">
+                <div>
+                  <h3 class='tm-uppercase g5-color-white'>Occupational Therapy  </h3>
+                </div>
+              </figcaption>
+            </figure>
+          </li>
+          <li class='glide__slide'>
+            <figure class="uk-overlay">
+              <img src="img/stock-10713.jpg?v=1" alt='' width='500' height='280' loading='lazy' class=''>
+              <figcaption class="uk-overlay-panel  uk-overlay-background uk-flex uk-flex-center uk-flex-middle uk-text-center">
+                <div>
+                  <h3 class='tm-uppercase g5-color-white'>Speech Therapy  </h3>
+                </div>
+              </figcaption>
+            </figure>
+          </li>
+        </ul>
+      </div>
+	    </div>
+    </div>
+	  <!-- Desktop arrows - OUTSIDE the track, INSIDE the glide container -->
+      <div class="uk-hidden-small g5-hidemobile">
+        <a role="button" aria-label="Previous" class="uk-slidenav uk-slidenav-previous uk-display-block g5-color-warning" id="carousel-prev"></a>
+        <a role="button" aria-label="Next" class="uk-slidenav uk-slidenav-next uk-display-block g5-color-warning" id="carousel-next"></a>
+      </div>
+      <div class="uk-container uk-visible-small uk-margin-top">
+        <div class="uk-grid uk-grid-width-1-2">
+          <div>
+            <a role="button" aria-label="Previous" class="uk-button uk-button-small g5-background-warning g5-hover-background-primary g5-color-white uk-text-center uk-width-1-1" id="carousel-prev-mobile"><span><i class="uk-icon-large uk-icon-angle-left"></i></span></a>
+          </div>
+          <div>
+            <a role="button" aria-label="Next" class="uk-button uk-button-small g5-background-warning g5-hover-background-primary  g5-color-white uk-text-center uk-width-1-1" id="carousel-next-mobile"><span><i class="uk-icon-large uk-icon-angle-right"></i></span></a>
+          </div>
+        </div>
+      </div>
+		  </div>
+  </div>
+</section>
+
+<!-- ===== PROFESSIONAL SERVICES GRID ===== -->
+<section id="tm-performance" class="uk-block  g5-background-primary">
+  <div class="uk-container-center g5-padding-medium-left g5-padding-medium-right uk-width-large-1-1 uk-width-medium-1-1 uk-width-small-1-1 uk-width-xlarge-3-4 tm-padding-large-all">
+    <h1 class='g5-color-white  uk-text-center'  >Professional Services Provided:</h1>
+    <div class="uk-slider-container uk-width-medium-9-10 uk-align-center">
+      <ul class="g5-padding-bottom uk-grid uk-grid-width-small-1-1 uk-grid-width-medium-1-2 uk-grid-width-large-1-3 uk-grid uk-text-center uk-grid-match">
+        <li class='uk-width-medium-1-2 uk-width-xlarge-1-3 uk-width-small-1-2'>
+          <div class=" uk-panel tm-background-gradient-services g5-padding-bottom g5-background-primary-shade g5-hover-background-warning uk-display-block g5-color-white g5-hover-color-white g5-transition uk-text-center"  >
+            <img src="img/stock-10639.jpg?v=1" alt=" " class="uk-align-center" width="400" height="300" loading="lazy">
+            <div class="g5-padding-small uk-text-large" style=""> Physical Therapy</div>
+          </div>
+        </li>
+        <li class='uk-width-medium-1-2 uk-width-xlarge-1-3 uk-width-small-1-2'>
+          <div class=" uk-panel tm-background-gradient-services g5-padding-bottom g5-background-primary-shade g5-hover-background-warning uk-display-block g5-color-white g5-hover-color-white g5-transition uk-text-center"  >
+            <img src="img/stock-9686.jpg?v=1" alt=" " class="uk-align-center" width="400" height="300" loading="lazy">
+            <div class="g5-padding-small uk-text-large" style=""> Chiropractic</div>
+          </div>
+        </li>
+        <li class='uk-width-medium-1-2 uk-width-xlarge-1-3 uk-width-small-1-2'>
+          <div class=" uk-panel tm-background-gradient-services g5-padding-bottom g5-background-primary-shade g5-hover-background-warning uk-display-block g5-color-white g5-hover-color-white g5-transition uk-text-center"  >
+            <img src="img/stock-8241.jpg?v=1" alt=" " class="uk-align-center" width="400" height="300" loading="lazy">
+            <div class="g5-padding-small uk-text-large" style=""> Acupuncture / Dry Needling</div>
+          </div>
+        </li>
+        <li class='uk-width-medium-1-2 uk-width-xlarge-1-3 uk-width-small-1-2'>
+          <div class=" uk-panel tm-background-gradient-services g5-padding-bottom g5-background-primary-shade g5-hover-background-warning uk-display-block g5-color-white g5-hover-color-white g5-transition uk-text-center"  >
+            <img src="img/stock-7065.jpg?v=1" alt=" " class="uk-align-center" width="400" height="300" loading="lazy">
+            <div class="g5-padding-small uk-text-large" style=""> Titleist Golf Fitness</div>
+          </div>
+        </li>
+        <li class='uk-width-medium-1-2 uk-width-xlarge-1-3 uk-width-small-1-2'>
+          <div class=" uk-panel tm-background-gradient-services g5-padding-bottom g5-background-primary-shade g5-hover-background-warning uk-display-block g5-color-white g5-hover-color-white g5-transition uk-text-center"  >
+            <img src="img/stock-6391.jpg?v=1" alt=" " class="uk-align-center" width="400" height="300" loading="lazy">
+            <div class="g5-padding-small uk-text-large" style=""> Cold Laser Therapy</div>
+          </div>
+        </li>
+        <li class='uk-width-medium-1-2 uk-width-xlarge-1-3 uk-width-small-1-2'>
+          <div class=" uk-panel tm-background-gradient-services g5-padding-bottom g5-background-primary-shade g5-hover-background-warning uk-display-block g5-color-white g5-hover-color-white g5-transition uk-text-center"  >
+            <img src="img/stock-2348.jpg?v=1" alt=" " class="uk-align-center" width="400" height="300" loading="lazy">
+            <div class="g5-padding-small uk-text-large" style=""> Spine Rehab</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PATIENT TESTIMONIALS SECTION ===== -->
+<section id="tm-testimonials" class='uk-block' style="background: rgb(32 103 165 / 10%);">
+  <div class="uk-container uk-container-center">
+    <h2 class="uk-h1 g5-color-primary uk-margin-large-bottom uk-text-center">Patient Success Stories</h2>
+    <ul class="uk-grid uk-grid-large uk-grid-width-medium-1-3">
+      <li>
+        <div class='g5-background-white g5-padding  g5-border-small g5-border-success'>
+          <div class='uk-text-center'> <i class='uk-icon-star g5-color-goldstar uk-icon-small'></i><i class='uk-icon-star g5-color-goldstar uk-icon-small'></i><i class='uk-icon-star g5-color-goldstar uk-icon-small'></i><i class='uk-icon-star g5-color-goldstar uk-icon-small'></i><i class='uk-icon-star g5-color-goldstar uk-icon-small'></i> </div>
+          <p class='uk-text-left uk-text-center-small'>
+            <div class='g5-color-black' style='line-height: normal'><i class='uk-icon-quote-right g5-color-warning uk-icon-justify uk-icon-small uk-align-left' style='color: rgb(255 255 255 / 22%);'></i> The staff at SOR is wonderful! Each person is friendly, patient, and helpful.The treatment plan begins very basically and progresses at your own pace until you complete your individual goal. </div>
+          </p>
+          <p class='tm-testimonial-signature uk-text-right uk-text-center-small g5-color-primary'>- Sandi M.</p>
+        </div>
+      </li>
+      <li>
+        <div class='g5-background-white g5-padding  g5-border-small g5-border-success'>
+          <div class='uk-text-center'> <i class='uk-icon-star g5-color-goldstar uk-icon-small'></i><i class='uk-icon-star g5-color-goldstar uk-icon-small'></i><i class='uk-icon-star g5-color-goldstar uk-icon-small'></i><i class='uk-icon-star g5-color-goldstar uk-icon-small'></i><i class='uk-icon-star g5-color-goldstar uk-icon-small'></i> </div>
+          <p class='uk-text-left uk-text-center-small'>
+            <div class='g5-color-black' style='line-height: normal'><i class='uk-icon-quote-right g5-color-warning uk-icon-justify uk-icon-small uk-align-left' style='color: rgb(255 255 255 / 22%);'></i> There is a certain feeling of wellness here at this physical therapy rehab facility.  </div>
+          </p>
+          <p class='tm-testimonial-signature uk-text-right uk-text-center-small g5-color-primary'>- Chrystie S.</p>
+        </div>
+      </li>
+      <li>
+        <div class='g5-background-white g5-padding  g5-border-small g5-border-success'>
+          <div class='uk-text-center'> <i class='uk-icon-star g5-color-goldstar uk-icon-small'></i><i class='uk-icon-star g5-color-goldstar uk-icon-small'></i><i class='uk-icon-star g5-color-goldstar uk-icon-small'></i><i class='uk-icon-star g5-color-goldstar uk-icon-small'></i><i class='uk-icon-star g5-color-goldstar uk-icon-small'></i> </div>
+          <p class='uk-text-left uk-text-center-small'>
+            <div class='g5-color-black' style='line-height: normal'><i class='uk-icon-quote-right g5-color-warning uk-icon-justify uk-icon-small uk-align-left' style='color: rgb(255 255 255 / 22%);'></i> I have had PT numerous times for my back. This was the first time I really found it helpful. Thanks, Rick, Jess, and Carol. </div>
+          </p>
+          <p class='tm-testimonial-signature uk-text-right uk-text-center-small g5-color-primary'>- Susan N.</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== CALL TO ACTION SECTION (REPEAT) ===== -->
+<section id="tm-cta" style="background-image: url(img/stock-10891.jpg?v=1);background-position: center;background-size: cover;background-attachment:fixed">
+  <div class="uk-block" style="background: rgb(255 255 255 / 80%);">
+    <div class="uk-container uk-container-center">
+      <div class="uk-grid uk-text-center uk-flex uk-flex-center uk-flex-middle">
+        <div class="uk-width-medium-1-2">
+          <div class="scroll-fade">
+            <div class="uk-h2 g5-color-primary uk-text-bold">Ready to Feel Better? Schedule Your Initial Evaluation & <br><span class="uk-h1 tm-uppercase g5-color-primary-shade"> Let's Make Things Happen!</span></div>
+          </div>
+        </div>
+        <div class="uk-width-medium-1-2">
+          <div >
+            <img src="img/phone-call.svg?v=1" class='uk-display-block uk-align-center' alt='physical therapy Irvine CA' width='70' height='70' loading="lazy">
+            <h2 class="uk-h1 g5-color-warning tm-uppercase"> Call Now</h2>
+            <div><a class="g5-color-black" href="tel:5407255300"><div class='rfa rfa_162_phoneonly g5-color-black uk-display-inline uk-h1'>(540) 725-5300</div></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER SECTION ===== -->
+<footer id="footer" class="g5-background-primary">
+  <div class='uk-container uk-container-center g5-padding-bottom'>
+    <div class="uk-grid uk-grid-medium uk-flex uk-flex-center">
+      <div class="uk-width-1-1">
+        <p class="uk-text-center g5-padding-top"><a class="g5-color-white g5-hover-color-warning uk-text-center" href="#" title="Back to Top" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;"><i class="uk-icon-arrow-up g5-color-warning"></i> Back to Top</a></p>
+      </div>
+      <div class="uk-width-large-1-3 uk-width-medium-1-2 uk-flex uk-flex-center uk-text-center-small">
+        <div>
+          <img src="img/logo-white.svg?v=1" alt=" " class="uk-margin-bottom" width="180" height="60" loading="lazy">
+          <div class=" uk-grid uk-grid-collapse uk-margin-top uk-hidden-small">
+            <div class="uk-width-medium-1-6">
+              <i class="uk-icon-map-marker g5-color-warning uk-display-inline"></i>
+            </div>
+            <div class="uk-width-medium-5-6">
+              <a href="https://www.google.com/maps?q=Spine+and+Orthopedic+Rehab+1919+Electric+Rd+SW+24018" target="_blank" class=''> <div class='rfa rfa_162 g5-color-white g5-hover-color-warning  g5-transition uk-display-inline'>1919 Electric Rd SW<br />
+Roanoke, VA 24018</div></a>
+            </div>
+          </div>
+          <div class="uk-visible-small">
+            <i class="uk-visible-small uk-icon-map-marker g5-color-warning uk-display-inline"></i>
+            <a href="https://www.google.com/maps?q=Spine+and+Orthopedic+Rehab+1919+Electric+Rd+SW+24018" target="_blank">
+              <div class='rfa rfa_162  g5-color-white g5-hover-color-warning  g5-transition uk-display-inline'>1919 Electric Rd SW<br />
+Roanoke, VA 24018</div>
+            </a>
+          </div>
+          <i class="uk-icon-phone g5-color-warning uk-display-inline"></i> <a href="tel:5407255300"><div class='rfa rfa_162_phoneonly uk-display-inline g5-color-white g5-hover-color-warning g5-transition'>(540) 725-5300</div></a><br>
+          <span class="g5-color-white"><i class="uk-icon-fax g5-color-warning uk-display-inline"></i> (540) 725-5356 </span><br>
+          <ul id="tm-socilaicons" class="uk-list uk-flex  uk-flex-middle">
+            <li class="g5-padding-small">
+              <a href="https://www.facebook.com/SpineOrthoRehab/" target="_blank" class="uk-display-block g5-color-white g5-hover-color-primary uk-icon-button uk-icon-facebook uk-icon-small g5-hover-background-white g5-background-primary-shade g5-transition-half"></a>
+            </li>
+            <li class="g5-padding-small">
+              <a href="https://www.yelp.com/biz/spine-and-orthopedic-rehab-roanoke" target="_blank" class="uk-display-block g5-color-white g5-hover-color-primary uk-icon-button uk-icon-yelp uk-icon-small g5-hover-background-white g5-background-primary-shade g5-transition-half"></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="uk-width-large-1-3 uk-width-medium-1-2 uk-text-center-small">
+        <iframe src="https://maps.google.com/maps?q=Spine+and+Orthopedic+Rehab,+1919+Electric+Rd+SW,+Roanoke,+VA+24018&t=&z=16&ie=UTF8&iwloc=&output=embed" style="width:100%;height:400px;border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div class="uk-width-large-1-3 uk-width-medium-1-2 uk-text-center-small">
+        <div class="uk-contrast">
+          <p class="uk-h3  g5-color-white uk-margin-bottom">Hours of Operation:</p>
+          <ul class="tm-hours uk-list uk-list-line uk-list-space uk-margin-remove">
+            <li><span class="uk-text-left uk-align-left uk-margin-remove">Monday</span> <span class="uk-align-right">8:00AM – 7:00PM</span></li>
+            <li><span class="uk-text-left uk-align-left uk-margin-remove">Tuesday</span> <span class="uk-align-right">By Appointment Only</span></li>
+            <li><span class="uk-text-left uk-align-left uk-margin-remove">Wednesday</span> <span class="uk-align-right">8:00AM – 7:00PM</span></li>
+            <li><span class="uk-text-left uk-align-left uk-margin-remove">Thursday</span> <span class="uk-align-right">By Appointment Only</span></li>
+            <li><span class="uk-text-left uk-align-left uk-margin-remove">Friday</span> <span class="uk-align-right">8:00AM – 7:00PM</span></li>
+            <li><span class="uk-text-left uk-align-left uk-margin-remove">Saturday</span> <span class="uk-align-right">Close </span></li>
+            <li><span class="uk-text-left uk-align-left uk-margin-remove">Sunday</span> <span class="uk-align-right">Close </span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="uk-text-center g5-padding uk-flex uk-flex-middle uk-flex-center">
+    <p class='g5-color-white uk-text-small'>&copy; Copyright <span id="year"></span> Spine and Orthopedic Rehab, All Rights Reserved.</p>
+  </div>
+  <script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</footer>
+
+<div style="display:none" id="practiceid">128</div>
+
+<!-- PERFORMANCE: Deferred Glide.js Carousel from CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.2.0/glide.min.js" defer></script>
+
+<!-- Vanilla JavaScript implementations -->
+<script>
+// ===== GLIDE.JS CAROUSEL INITIALIZATION =====
+(function() {
+  // Wait for DOM and Glide.js to be ready
+  function initCarousel() {
+    if (typeof Glide === 'undefined') {
+      setTimeout(initCarousel, 50);
+      return;
+    }
+
+    const carouselElement = document.querySelector('#services-carousel');
+    if (!carouselElement) return;
+
+    // Initialize Glide.js with true infinite looping support
+    const glide = new Glide('#services-carousel', {
+      type: 'carousel',  // This enables true infinite looping!
+      perView: 4,  // Default: show 4 slides on large screens
+      autoplay: 3000,
+      hoverpause: true,
+      animationDuration: 500,
+      gap: 20,  // Reduced gap between slides
+      peek: 0,  // No partial slides visible
+//    bound: true,  // Prevent overflowing
+      breakpoints: {
+        979: {
+          perView: 3  // At 1200px and below: show 3 slides
+        },
+        768: {
+          perView: 2  // At 768px and below (mobile): show 1 slide
+        },
+			479: {
+				perView: 1
+			}
+      }
+    });
+
+    // Mount the carousel
+    glide.mount();
+
+    // Bind custom arrow controls
+    const prevBtn = document.getElementById('carousel-prev');
+    const nextBtn = document.getElementById('carousel-next');
+    const prevMobile = document.getElementById('carousel-prev-mobile');
+    const nextMobile = document.getElementById('carousel-next-mobile');
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        glide.go('<');  // Go to previous slide
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        glide.go('>');  // Go to next slide
+      });
+    }
+
+    if (prevMobile) {
+      prevMobile.addEventListener('click', function(e) {
+        e.preventDefault();
+        glide.go('<');
+      });
+    }
+
+    if (nextMobile) {
+      nextMobile.addEventListener('click', function(e) {
+        e.preventDefault();
+        glide.go('>');
+      });
+    }
+  }
+
+  // Start initialization when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initCarousel);
+  } else {
+    initCarousel();
+  }
+})();
+
+// ===== SCROLL FADE ANIMATIONS =====
+(function() {
+  const fadeElements = document.querySelectorAll('.scroll-fade');
+  if (!fadeElements.length) return;
+
+  // Create IntersectionObserver
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        // Add fade animation class immediately when element enters viewport
+        entry.target.classList.add('uk-animation-fade');
+      } else {
+        // Remove animation class when element leaves viewport
+        // This enables the repeat behavior
+        entry.target.classList.remove('uk-animation-fade');
+      }
+    });
+  }, {
+    threshold: 0.2, // Trigger when 20% of element is visible
+    rootMargin: '-50px' // Start animation 50px before element enters viewport
+  });
+
+  // Observe all fade elements
+  fadeElements.forEach(function(element) {
+    observer.observe(element);
+  });
+})();
+
+// ===== MATCH HEIGHT FUNCTIONALITY =====
+(function() {
+  // Find all unique data-mh groups (we removed the attributes but need to identify the elements)
+  // Target specific sections that need height matching
+  const matchGroups = [
+    { selector: '#tm-value-stack .uk-grid > li > div > div', name: 'value-boxes' },
+    { selector: '#tm-plan .uk-panel', name: 'plan-panels' },
+    { selector: '#tm-testimonials .g5-background-white', name: 'testimonials' }
+  ];
+
+  function matchHeights(selector) {
+    const elements = document.querySelectorAll(selector);
+    if (!elements.length) return;
+
+    // Reset heights first
+    elements.forEach(function(el) {
+      el.style.height = '';
+    });
+
+    // Group elements by row (with threshold for offsetTop differences)
+    const rows = [];
+    const threshold = 50; // pixels threshold for considering elements in same row
+
+    elements.forEach(function(el) {
+      const top = el.offsetTop;
+      let foundRow = false;
+
+      // Check if element belongs to existing row
+      for (let i = 0; i < rows.length; i++) {
+        const rowTop = rows[i].top;
+        if (Math.abs(top - rowTop) < threshold) {
+          rows[i].elements.push(el);
+          foundRow = true;
+          break;
+        }
+      }
+
+      // Create new row if not found
+      if (!foundRow) {
+        rows.push({ top: top, elements: [el] });
+      }
+    });
+
+    // Apply max height to each row
+    rows.forEach(function(row) {
+      let maxHeight = 0;
+
+      // Find max height in this row
+      row.elements.forEach(function(el) {
+        const height = el.offsetHeight;
+        if (height > maxHeight) {
+          maxHeight = height;
+        }
+      });
+
+      // Apply max height to all elements in row
+      row.elements.forEach(function(el) {
+        el.style.height = maxHeight + 'px';
+      });
+    });
+  }
+
+  function matchAllGroups() {
+    matchGroups.forEach(function(group) {
+      matchHeights(group.selector);
+    });
+  }
+
+  // Initial match
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', matchAllGroups);
+  } else {
+    matchAllGroups();
+  }
+
+  // Re-match on window resize (throttled)
+  let resizeTimer;
+  window.addEventListener('resize', function() {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function() {
+      matchAllGroups();
+    }, 100);
+  });
+
+  // Re-match after images load
+  window.addEventListener('load', matchAllGroups);
+})();
+</script>
+</body>
+</html>
