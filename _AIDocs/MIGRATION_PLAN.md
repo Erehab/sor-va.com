@@ -1,11 +1,24 @@
 # Static HTML Site Migration Plan
 
+> **Note:** This document describes the historical migration process when files were in the root directory. As of November 2025, production files have been reorganized into the `public/` directory for cleaner separation. References to `index.html`, `/img/`, `/fonts/`, etc. in this document refer to their original locations during migration.
+
+## Current Repository Structure (Post-Reorganization)
+**Production files:** All website files are in `public/` directory
+- `public/index.html` - Production site
+- `public/output.min.css` - UIKit CSS
+- `public/fonts/` - Web fonts
+- `public/img/` - All images
+
+**Development files:** Root directory
+- Alternative HTML versions (original_index.html, noUi.html, nojs.html)
+- Documentation and AI planning docs (_AIDocs/)
+
 ## PHASE 0: Initial Image & File Migration (Pre-Migration Plan)
 
 **Status:** ✅ Complete
 
 ### Overview
-Before the formal migration plan was created, all external image URLs and JavaScript files were copied from external domains to local `/img/` directory and root directory. This foundational work established the local repository structure.
+Before the formal migration plan was created, all external image URLs and JavaScript files were copied from external domains to local `public/img/` directory and root directory. This foundational work established the local repository structure.
 
 ### Work Completed
 - ✅ Downloaded all external images from:

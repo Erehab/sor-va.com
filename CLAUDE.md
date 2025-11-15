@@ -4,7 +4,12 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a static HTML site repository (`sor-va.com`) containing simple one-page website templates. The project consists of minimal HTML files with embedded CSS, no build process, and no backend dependencies. The goal is to make this site run completely for this directory structure with only calls to cdnjs.
+This is a static HTML site repository (`sor-va.com`) containing simple one-page website templates. The project consists of minimal HTML files with embedded CSS, no build process, and no backend dependencies.
+
+**Structure:**
+- `public/` - Production website files (index.html, CSS, fonts, images)
+- Root - Development files, documentation, and AI planning docs
+- The goal is to make this site run completely with only CDN calls
 
 ## How to manage tasks VERY IMPORTANT
 Read the /_AIDocs/MIGRATION_PLAN.md file before making any changes to the project.
@@ -16,46 +21,59 @@ Read the /_AIDocs/MIGRATION_PLAN.md file before making any changes to the projec
 
 ## Repository Contents
 
-### Main Files
-- `index.html` - Primary one-page site template with header, navigation, sections (home, about, services, contact), and embedded styling
-- `dump/` - Archived/reference files (not part of active development) Only read when requested.
+### Production Files (public/)
+- `public/index.html` - Production one-page site (Glide.js carousel, vanilla JS)
+- `public/output.min.css` - UIKit 2 CSS framework
+- `public/fonts/` - Local web fonts (Lato, Oswald)
+- `public/img/` - All images (logo, hero, stock photos)
+
+### Development Files (root)
+- `original_index.html` - Original UIKit JS version (dev reference)
+- `noUi.html` - Alternative version without UIKit (dev reference)
+- `nojs.html` - No JavaScript version (dev reference)
+- `_AIDocs/` - AI planning and migration documentation
 
 ## Development
 
 ### Viewing the Site
 Since this is a static HTML project, simply open the HTML files in a browser or use Playwright to test.
 ```bash
-open index.html
+# Production version
+open public/index.html
+
+# Development versions
+open original_index.html
+open noUi.html
+open nojs.html
 ```
 
 Alternatively, if you want to test with a local server:
 ```bash
 python3 -m http.server 8000
-# then visit http://localhost:8000
+# then visit http://localhost:8000/public/
 ```
 
 ### Project Structure
-The HTML is self-contained with:
-- **Styling**: Embedded `<style>` tags in the HTML head (no external CSS files)
-- **Layout**: Container-based responsive design with flexbox and CSS Grid
-- **Components**: Navigation bar, hero section, feature cards, contact form
+The production HTML (`public/index.html`) uses:
+- **Styling**: UIKit 2 CSS framework (`public/output.min.css`) + inline `<style>` tags
+- **Layout**: UIKit grid system with responsive design
+- **Components**: Navigation bar, hero section, Glide.js carousel, testimonials, contact form
+- **Images**: Local images in `public/img/`
+- **Fonts**: Local fonts in `public/fonts/`
 
 ### Common Development Tasks
 
+#### Making Changes to Production Site
+1. Edit `public/index.html` directly
+1. Add images to `public/img/` and reference as `img/filename.ext?v=1`
+1. CSS changes: Add to `<style>` tag in `<head>` section
+1. Use `?v=1` query string for cache busting when updating files
+
 #### Adding New Sections
 1. Add a new `<section>` element in the `<main>` area with a unique `id`
-1. Add corresponding link in the navigation `.nav-links`
-1. Follow the existing CSS patterns for padding and borders
-1. Use `.container` div for content wrapper
-1. Make the sections navigatable with a simple menu that goes to anchor tags on the sections
-
-#### Styling Changes
-All CSS is in the `<style>` tag. Key design elements:
-- **Container**: Max-width 960px, centered with padding
-- **Colors**: Primary blue (#0d6efd), grays (#212529, #555, #666), backgrounds (#f8f9fa, #fff)
-- **Typography**: System fonts with fallbacks
-- **Spacing**: Uses rem units (1rem = 16px base)
-- **Responsive**: Uses `auto-fit` grid and flexbox for mobile compatibility
+1. Add corresponding link in the navigation
+1. Follow the existing UIKit CSS patterns
+1. Make sections navigatable with anchor tags
 
 ### Git Workflow
 - Use SSH URLs (already configured as `git@github.com:Erehab/sor-va.com.git`)
