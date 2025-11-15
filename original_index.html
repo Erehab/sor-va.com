@@ -153,64 +153,14 @@ body { overflow-x: hidden; }
     width: 100% !important;
   }
 }
-
-/* Scroll fade initial state */
-.scroll-fade {
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-}
-
-.scroll-fade.uk-animation-fade {
-  opacity: 1;
-}
-
-
-.glide__slide figure.uk-overlay {
-  max-height: 240px;
-  overflow: hidden;
-}
-
-.glide__slide figure.uk-overlay img {
-  width: 100%;
-  height: 400px;
-  object-fit: cover;
-}
-
-/* Carousel container positioning */
-#services-carousel {
-	width:90%;
-	margin: 0 auto;
-}
-
-
-/* Arrow positioning - outside track, inside glide container */
-#carousel-prev,
-#carousel-next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 10;
-}
-
-#carousel-prev {
-  left: 0;
-}
-
-#carousel-next {
-  right: 0;
-}
   </style>
-
-  <!-- Glide.js Carousel from CDN -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.2.0/css/glide.core.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.2.0/css/glide.theme.min.css">
 </head>
 <body class="uk-height-1-1 page-home desktop chrome">
 
 <!-- ===== HEADER SECTION ===== -->
 <header id="header" class="g5-background-white">
   <div class="uk-container-center uk-container g5-padding-medium-left g5-padding-medium-right uk-width-large-1-1 uk-width-medium-1-1 uk-width-small-1-1 uk-width-xlarge-2-3 ">
-    <div class="uk-grid uk-grid-small uk-flex uk-flex-middle uk-flex-center">
+    <div class="uk-grid uk-grid-small uk-flex uk-flex-middle uk-flex-center" data-uk-grid-margin="">
       <div class="uk-width-large-1-2 uk-width-medium-1-2 uk-width-small-1-1 uk-text-center-small g5-padding-top g5-padding-small-bottom">
         <img src="img/logo.svg" alt=" " width="600" height="200" loading="lazy" class="uk-display-block uk-align-center uk-margin-bottom-remove">
       </div>
@@ -230,7 +180,7 @@ Roanoke, VA 24018</div></a><br>
     </div>
     <!-- Mobile Contact Info -->
     <div class="uk-visible-small uk-text-center g5-padding-bottom">
-      <div class="uk-grid uk-grid-small uk-flex uk-flex-center uk-flex-middle">
+      <div class="uk-grid uk-grid-small uk-flex uk-flex-center uk-flex-middle" data-uk-grid-margin="">
         <div class="uk-width-small-1-1">
           <a href="https://www.google.com/maps?q=Spine+and+Orthopedic+Rehab+1919+Electric+Rd+SW+24018" target="_blank" class='uk-h4 g5-color-primary-shade g5-hover-color-primary'><i class="uk-icon-map-marker g5-color-primary uk-display-inline"></i> <div class='rfa rfa_162 uk-display-inline'>1919 Electric Rd SW<br />Roanoke, VA 24018</div></a>
           <div class="g5-padding-top">
@@ -276,28 +226,28 @@ Roanoke, VA 24018</div></a><br>
 <!-- ===== VALUE PROPOSITION SECTION ===== -->
 <section id="tm-value-stack" class='uk-block'>
   <div class=" uk-container-center  g5-padding-medium-left g5-padding-medium-right uk-width-large-1-1 uk-width-medium-1-1 uk-width-small-1-1 uk-width-xlarge-5-6">
-    <ul class="uk-grid uk-grid-width-medium-1-3 uk-grid-width-large-1-3 uk-grid-large uk-flex uk-flex-middle"="">
+    <ul class="uk-grid uk-grid-width-medium-1-3 uk-grid-width-large-1-3 uk-grid-large uk-flex uk-flex-middle" data-uk-grid-margin="" data-uk-grid-match="">
       <li>
-        <div class="">
+        <div class="" data-mh="tm-value-stack-title">
           <div class="g5-border-small-all g5-border-primary g5-padding">
             <img src="img/1-hour.svg" width="80" height="80" loading="lazy" class="uk-display-block uk-align-center" alt="physical therapy Herriman UT">
-            <p class="uk-text-center uk-h2"> <span class="g5-color-primary-shade uk-display-block g5-padding tm-uppercase"> Full One-Hour Initial <br>  Evaluation </span> <span class="tm-text-body uk-h3 g5-color-warning">We Take The Time To Listen To You</span></p>
+            <p class="uk-text-center uk-h2" data-mh="tm-value-text"> <span class="g5-color-primary-shade uk-display-block g5-padding tm-uppercase"> Full One-Hour Initial <br>  Evaluation </span> <span class="tm-text-body uk-h3 g5-color-warning">We Take The Time To Listen To You</span></p>
           </div>
         </div>
       </li>
       <li>
-        <div class="">
+        <div class="" data-mh="tm-value-stack-title">
           <div class="g5-border-small-all g5-border-primary g5-padding">
             <img src="img/checked.svg" width="80" height="80" loading="lazy" class="uk-display-block uk-align-center" alt="physical therapy Herriman UT">
-            <p class="uk-text-center uk-h2"> <span class="g5-color-primary-shade uk-display-block g5-padding tm-uppercase"> The Right Treatments for Faster Results </span> <span class="tm-text-body uk-h3 g5-color-warning">We Combine Physical Therapy, Chiropractic, & Acupuncture</span></p>
+            <p class="uk-text-center uk-h2" data-mh="tm-value-text"> <span class="g5-color-primary-shade uk-display-block g5-padding tm-uppercase"> The Right Treatments for Faster Results </span> <span class="tm-text-body uk-h3 g5-color-warning">We Combine Physical Therapy, Chiropractic, & Acupuncture</span></p>
           </div>
         </div>
       </li>
       <li>
-        <div class="">
+        <div class="" data-mh="tm-value-stack-title">
           <div class="g5-border-small-all g5-border-primary g5-padding">
             <img src="img/clipboard.svg" width="80" height="80" loading="lazy" class="uk-display-block uk-align-center" alt="physical therapy Herriman UT">
-            <p class="uk-text-center uk-h2"> <span class="g5-color-primary-shade uk-display-block g5-padding tm-uppercase"> Most Insurance <br> Plans Accepted</span>  <span class="tm-text-body uk-h3 g5-color-warning">Medicare, Private Insurances, Worker's Comp</span></p>
+            <p class="uk-text-center uk-h2" data-mh="tm-value-text"> <span class="g5-color-primary-shade uk-display-block g5-padding tm-uppercase"> Most Insurance <br> Plans Accepted</span>  <span class="tm-text-body uk-h3 g5-color-warning">Medicare, Private Insurances, Worker's Comp</span></p>
           </div>
         </div>
       </li>
@@ -309,7 +259,7 @@ Roanoke, VA 24018</div></a><br>
 <section id="tm-stakes" class="g5-padding-large-top">
   <div class="" style="background: rgb(245 245 245 / 50%);">
     <div class="uk-container uk-container-center">
-      <div id="tm-stakes-box" class='uk-grid uk-grid-large uk-grid-match uk-flex uk-flex-middle'>
+      <div id="tm-stakes-box" class='uk-grid uk-grid-large uk-grid-match uk-flex uk-flex-middle' data-uk-grid-margin data-uk-grid-match>
         <div id="tm-stakes-grid" class="uk-width-small-1-1 uk-width-medium-1-1 uk-width-large-1-2">
           <p class="tm-title uk-hidden-small"><span class="uk-h1 g5-color-primary-shade">Are You Having</span><br><span class="g5-color-primary uk-h1 tm-uppercase">Trouble with Daily Activities?</span></p>
           <p class="uk-visible-small uk-text-center-small "><span class="uk-h1 g5-color-primary-shade">Are You Having</span><br><span class="g5-color-primary uk-h1 tm-uppercase">Trouble with Daily Activities?</span></p>
@@ -334,7 +284,7 @@ Roanoke, VA 24018</div></a><br>
 <!-- ===== ABOUT / BENEFITS SECTION ===== -->
 <section id="tm-benefits" class="uk-block g5-background-primary">
   <div class="uk-container-center uk-width-large-1-1 uk-width-medium-1-1 uk-width-small-1-1 uk-width-xlarge-3-4 g5-padding-left g5-padding-right g5-padding-large-top g5-padding-large-bottom">
-    <div class="uk-grid uk-grid-large uk-flex uk-flex-middle">
+    <div class="uk-grid uk-grid-large uk-flex uk-flex-middle" data-uk-grid-margin>
       <div class="uk-width-large-1-2 uk-width-medium-1-1">
         <div class="g5-video-wrapper">
           <iframe loading="lazy" src="https://www.youtube.com/embed/c5XzLQUNFOI?si=qSTALCj5-9ZoM7Tv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -361,11 +311,11 @@ Roanoke, VA 24018</div></a><br>
 <section id="tm-plan" class="uk-block uk-block-muted">
   <div class="uk-container-center uk-container tm-padding-large-all">
     <h1 class='uk-text-center g5-color-primary tm-uppercase'>Getting Started Is Easy</h1>
-    <ul class='uk-margin-large-top uk-grid uk-grid-width-large-1-3 uk-grid-width-medium-1-2 uk-flex uk-flex-center uk-grid-match'>
+    <ul class='uk-margin-large-top uk-grid uk-grid-width-large-1-3 uk-grid-width-medium-1-2 uk-flex uk-flex-center uk-grid-match' data-uk-grid-match data-uk-grid-margin>
       <li class='g5-padding-bottom g5-padding-top'>
         <div class='uk-panel uk-position-relative g5-background-primary'>
           <img alt="" src="img/stock-8078.jpg" alt="physical therapy Las Vegas NV" width="400" height="300" loading="lazy">
-          <div class="g5-padding uk-text-center uk-text-center-small uk-position-relative" style="z-index:1;">
+          <div class="g5-padding uk-text-center uk-text-center-small uk-position-relative" style="z-index:1;" data-mh="tm-steps-panel">
             <div  class=" tm_plan_number uk-align-center g5-border-small-all g5-border-white g5-background-success g5-padding-small-all uk-h2 g5-color-white"> 1 </div>
             <div class='g5-color-white uk-text-large'>Contact Us</div>
           </div>
@@ -374,7 +324,7 @@ Roanoke, VA 24018</div></a><br>
       <li class='g5-padding-bottom g5-padding-top'>
         <div class='uk-panel uk-position-relative g5-background-primary'>
           <img alt="" src="img/stock-6218.jpg" alt="physical therapy Las Vegas NV" width="400" height="300" loading="lazy">
-          <div class="g5-padding uk-text-center uk-text-center-small uk-position-relative" style="z-index:1;">
+          <div class="g5-padding uk-text-center uk-text-center-small uk-position-relative" style="z-index:1;" data-mh="tm-steps-panel">
             <div  class=" tm_plan_number uk-align-center g5-border-small-all g5-border-white g5-background-success g5-padding-small-all uk-h2 g5-color-white"> 2 </div>
             <div class='g5-color-white uk-text-large'>Schedule An Appointment</div>
           </div>
@@ -383,7 +333,7 @@ Roanoke, VA 24018</div></a><br>
       <li class='g5-padding-bottom g5-padding-top'>
         <div class='uk-panel uk-position-relative g5-background-primary'>
           <img alt="" src="img/stock-8475.jpg" alt="physical therapy Las Vegas NV" width="400" height="300" loading="lazy">
-          <div class="g5-padding uk-text-center uk-text-center-small uk-position-relative" style="z-index:1;">
+          <div class="g5-padding uk-text-center uk-text-center-small uk-position-relative" style="z-index:1;" data-mh="tm-steps-panel">
             <div  class=" tm_plan_number uk-align-center g5-border-small-all g5-border-white g5-background-success g5-padding-small-all uk-h2 g5-color-white"> 3 </div>
             <div class='g5-color-white uk-text-large'>Come In And Meet With Your Therapist</div>
           </div>
@@ -397,9 +347,9 @@ Roanoke, VA 24018</div></a><br>
 <section id="tm-cta" style="background-image: url(img/stock-10891.jpg?v=1);background-position: center;background-size: cover;background-attachment:fixed">
   <div class="uk-block" style="background: rgb(255 255 255 / 80%);">
     <div class="uk-container uk-container-center">
-      <div class="uk-grid uk-text-center uk-flex uk-flex-center uk-flex-middle">
+      <div class="uk-grid uk-text-center uk-flex uk-flex-center uk-flex-middle" data-uk-grid-margin>
         <div class="uk-width-medium-1-2">
-          <div class="scroll-fade">
+          <div data-uk-scrollspy="{cls:'uk-animation-fade', delay:200, repeat:true}">
             <div class="uk-h2 g5-color-primary uk-text-bold">Ready to Feel Better? Schedule Your Initial Evaluation & <br><span class="uk-h1 tm-uppercase g5-color-primary-shade"> Let's Make Things Happen!</span></div>
           </div>
         </div>
@@ -451,14 +401,12 @@ Roanoke, VA 24018</div></a><br>
 
 <!-- ===== PROFESSIONAL SERVICES CAROUSEL ===== -->
 <section id='tm-service' class='uk-block uk-block-muted'>
-  <div class='uk-container-center uk-container'>
+  <div class='uk-container-center g5-padding-medium-left g5-padding-medium-right uk-width-large-1-1 uk-width-medium-1-1 uk-width-small-1-1 uk-width-xlarge-4-6'>
     <h2 class='uk-text-center g5-color-primary-shade uk-h1  tm-uppercase'>Professional Services We Provide:</h2>
-	  <div style="position: relative">
-    <div id="services-carousel">
-	    <div class="glide">
-		    <div class="glide__track" data-glide-el="track">
-        <ul class="glide__slides" style="margin: 0">
-          <li class='glide__slide'>
+    <div class="uk-slidenav-position" data-uk-slider={autoplay:true,autoplayInterval:3000}>
+      <div class="uk-slider-container uk-width-medium-9-10 uk-align-center">
+        <ul class="g5-padding-bottom uk-slider uk-grid-width-small-1-1 uk-grid-width-medium-1-3 uk-grid-width-large-1-4 uk-grid uk-text-center" data-uk-grid-margin>
+          <li class=''>
             <figure class="uk-overlay">
               <img src="img/stock-11624.jpg" alt='' width='500' height='280' loading='lazy' class=''>
               <figcaption class="uk-overlay-panel  uk-overlay-background uk-flex uk-flex-center uk-flex-middle uk-text-center">
@@ -468,7 +416,7 @@ Roanoke, VA 24018</div></a><br>
               </figcaption>
             </figure>
           </li>
-          <li class='glide__slide'>
+          <li class=''>
             <figure class="uk-overlay">
               <img src="img/stock-10799.jpg" alt='' width='500' height='280' loading='lazy' class=''>
               <figcaption class="uk-overlay-panel  uk-overlay-background uk-flex uk-flex-center uk-flex-middle uk-text-center">
@@ -478,7 +426,7 @@ Roanoke, VA 24018</div></a><br>
               </figcaption>
             </figure>
           </li>
-          <li class='glide__slide'>
+          <li class=''>
             <figure class="uk-overlay">
               <img src="img/stock-11011.jpg?v=1" alt='' width='500' height='280' loading='lazy' class=''>
               <figcaption class="uk-overlay-panel  uk-overlay-background uk-flex uk-flex-center uk-flex-middle uk-text-center">
@@ -488,7 +436,7 @@ Roanoke, VA 24018</div></a><br>
               </figcaption>
             </figure>
           </li>
-          <li class='glide__slide'>
+          <li class=''>
             <figure class="uk-overlay">
               <img src="img/stock-12443.jpg?v=1" alt='' width='500' height='280' loading='lazy' class=''>
               <figcaption class="uk-overlay-panel  uk-overlay-background uk-flex uk-flex-center uk-flex-middle uk-text-center">
@@ -498,7 +446,7 @@ Roanoke, VA 24018</div></a><br>
               </figcaption>
             </figure>
           </li>
-          <li class='glide__slide'>
+          <li class=''>
             <figure class="uk-overlay">
               <img src="img/stock-8855.jpg?v=1" alt='' width='500' height='280' loading='lazy' class=''>
               <figcaption class="uk-overlay-panel  uk-overlay-background uk-flex uk-flex-center uk-flex-middle uk-text-center">
@@ -508,7 +456,7 @@ Roanoke, VA 24018</div></a><br>
               </figcaption>
             </figure>
           </li>
-          <li class='glide__slide'>
+          <li class=''>
             <figure class="uk-overlay">
               <img src="img/stock-7553.jpg?v=1" alt='' width='500' height='280' loading='lazy' class=''>
               <figcaption class="uk-overlay-panel  uk-overlay-background uk-flex uk-flex-center uk-flex-middle uk-text-center">
@@ -518,7 +466,7 @@ Roanoke, VA 24018</div></a><br>
               </figcaption>
             </figure>
           </li>
-          <li class='glide__slide'>
+          <li class=''>
             <figure class="uk-overlay">
               <img src="img/stock-10713.jpg?v=1" alt='' width='500' height='280' loading='lazy' class=''>
               <figcaption class="uk-overlay-panel  uk-overlay-background uk-flex uk-flex-center uk-flex-middle uk-text-center">
@@ -530,24 +478,21 @@ Roanoke, VA 24018</div></a><br>
           </li>
         </ul>
       </div>
-	    </div>
-    </div>
-	  <!-- Desktop arrows - OUTSIDE the track, INSIDE the glide container -->
       <div class="uk-hidden-small g5-hidemobile">
-        <a role="button" aria-label="Previous" class="uk-slidenav uk-slidenav-previous uk-display-block g5-color-warning" id="carousel-prev"></a>
-        <a role="button" aria-label="Next" class="uk-slidenav uk-slidenav-next uk-display-block g5-color-warning" id="carousel-next"></a>
+        <a href="" style='left: -15px;' class="uk-slidenav uk-slidenav-previous uk-display-block g5-color-warning" data-uk-slider-item="previous"></a>
+        <a href="" style='right: -15px;' class="uk-slidenav uk-slidenav-next uk-display-block g5-color-warning" data-uk-slider-item="next"></a>
       </div>
       <div class="uk-container uk-visible-small uk-margin-top">
-        <div class="uk-grid uk-grid-width-1-2">
+        <div class="uk-grid uk-grid-width-1-2" data-uk-grid-margin>
           <div>
-            <a role="button" aria-label="Previous" class="uk-button uk-button-small g5-background-warning g5-hover-background-primary g5-color-white uk-text-center uk-width-1-1" id="carousel-prev-mobile"><span><i class="uk-icon-large uk-icon-angle-left"></i></span></a>
+            <a href="" class="uk-button uk-button-small g5-background-warning g5-hover-background-primary g5-color-white   uk-text-center uk-width-1-1" style="" data-uk-slider-item="previous"><span><i class="uk-icon-large uk-icon-angle-left"></i></span></a>
           </div>
           <div>
-            <a role="button" aria-label="Next" class="uk-button uk-button-small g5-background-warning g5-hover-background-primary  g5-color-white uk-text-center uk-width-1-1" id="carousel-next-mobile"><span><i class="uk-icon-large uk-icon-angle-right"></i></span></a>
+            <a href="" class="uk-button uk-button-small g5-background-warning g5-hover-background-primary  g5-color-white uk-text-center uk-width-1-1" style=""  data-uk-slider-item="next" ><span><i class="uk-icon-large uk-icon-angle-right"></i></span></a>
           </div>
         </div>
       </div>
-		  </div>
+    </div>
   </div>
 </section>
 
@@ -556,41 +501,41 @@ Roanoke, VA 24018</div></a><br>
   <div class="uk-container-center g5-padding-medium-left g5-padding-medium-right uk-width-large-1-1 uk-width-medium-1-1 uk-width-small-1-1 uk-width-xlarge-3-4 tm-padding-large-all">
     <h1 class='g5-color-white  uk-text-center'  >Professional Services Provided:</h1>
     <div class="uk-slider-container uk-width-medium-9-10 uk-align-center">
-      <ul class="g5-padding-bottom uk-grid uk-grid-width-small-1-1 uk-grid-width-medium-1-2 uk-grid-width-large-1-3 uk-grid uk-text-center uk-grid-match">
+      <ul class="g5-padding-bottom uk-grid uk-grid-width-small-1-1 uk-grid-width-medium-1-2 uk-grid-width-large-1-3 uk-grid uk-text-center uk-grid-match" data-uk-grid-match="{target:'.uk-panel'}" data-uk-grid-margin>
         <li class='uk-width-medium-1-2 uk-width-xlarge-1-3 uk-width-small-1-2'>
           <div class=" uk-panel tm-background-gradient-services g5-padding-bottom g5-background-primary-shade g5-hover-background-warning uk-display-block g5-color-white g5-hover-color-white g5-transition uk-text-center"  >
             <img src="img/stock-10639.jpg?v=1" alt=" " class="uk-align-center" width="400" height="300" loading="lazy">
-            <div class="g5-padding-small uk-text-large" style=""> Physical Therapy</div>
+            <div class="g5-padding-small uk-text-large" data-mh="tm-service-title" style=""> Physical Therapy</div>
           </div>
         </li>
         <li class='uk-width-medium-1-2 uk-width-xlarge-1-3 uk-width-small-1-2'>
           <div class=" uk-panel tm-background-gradient-services g5-padding-bottom g5-background-primary-shade g5-hover-background-warning uk-display-block g5-color-white g5-hover-color-white g5-transition uk-text-center"  >
             <img src="img/stock-9686.jpg?v=1" alt=" " class="uk-align-center" width="400" height="300" loading="lazy">
-            <div class="g5-padding-small uk-text-large" style=""> Chiropractic</div>
+            <div class="g5-padding-small uk-text-large" data-mh="tm-service-title" style=""> Chiropractic</div>
           </div>
         </li>
         <li class='uk-width-medium-1-2 uk-width-xlarge-1-3 uk-width-small-1-2'>
           <div class=" uk-panel tm-background-gradient-services g5-padding-bottom g5-background-primary-shade g5-hover-background-warning uk-display-block g5-color-white g5-hover-color-white g5-transition uk-text-center"  >
             <img src="img/stock-8241.jpg?v=1" alt=" " class="uk-align-center" width="400" height="300" loading="lazy">
-            <div class="g5-padding-small uk-text-large" style=""> Acupuncture / Dry Needling</div>
+            <div class="g5-padding-small uk-text-large" data-mh="tm-service-title" style=""> Acupuncture / Dry Needling</div>
           </div>
         </li>
         <li class='uk-width-medium-1-2 uk-width-xlarge-1-3 uk-width-small-1-2'>
           <div class=" uk-panel tm-background-gradient-services g5-padding-bottom g5-background-primary-shade g5-hover-background-warning uk-display-block g5-color-white g5-hover-color-white g5-transition uk-text-center"  >
             <img src="img/stock-7065.jpg?v=1" alt=" " class="uk-align-center" width="400" height="300" loading="lazy">
-            <div class="g5-padding-small uk-text-large" style=""> Titleist Golf Fitness</div>
+            <div class="g5-padding-small uk-text-large" data-mh="tm-service-title" style=""> Titleist Golf Fitness</div>
           </div>
         </li>
         <li class='uk-width-medium-1-2 uk-width-xlarge-1-3 uk-width-small-1-2'>
           <div class=" uk-panel tm-background-gradient-services g5-padding-bottom g5-background-primary-shade g5-hover-background-warning uk-display-block g5-color-white g5-hover-color-white g5-transition uk-text-center"  >
             <img src="img/stock-6391.jpg?v=1" alt=" " class="uk-align-center" width="400" height="300" loading="lazy">
-            <div class="g5-padding-small uk-text-large" style=""> Cold Laser Therapy</div>
+            <div class="g5-padding-small uk-text-large" data-mh="tm-service-title" style=""> Cold Laser Therapy</div>
           </div>
         </li>
         <li class='uk-width-medium-1-2 uk-width-xlarge-1-3 uk-width-small-1-2'>
           <div class=" uk-panel tm-background-gradient-services g5-padding-bottom g5-background-primary-shade g5-hover-background-warning uk-display-block g5-color-white g5-hover-color-white g5-transition uk-text-center"  >
             <img src="img/stock-2348.jpg?v=1" alt=" " class="uk-align-center" width="400" height="300" loading="lazy">
-            <div class="g5-padding-small uk-text-large" style=""> Spine Rehab</div>
+            <div class="g5-padding-small uk-text-large" data-mh="tm-service-title" style=""> Spine Rehab</div>
           </div>
         </li>
       </ul>
@@ -602,30 +547,30 @@ Roanoke, VA 24018</div></a><br>
 <section id="tm-testimonials" class='uk-block' style="background: rgb(32 103 165 / 10%);">
   <div class="uk-container uk-container-center">
     <h2 class="uk-h1 g5-color-primary uk-margin-large-bottom uk-text-center">Patient Success Stories</h2>
-    <ul class="uk-grid uk-grid-large uk-grid-width-medium-1-3">
+    <ul class="uk-grid uk-grid-large uk-grid-width-medium-1-3" data-uk-grid-margin>
       <li>
-        <div class='g5-background-white g5-padding  g5-border-small g5-border-success'>
+        <div class='g5-background-white g5-padding  g5-border-small g5-border-success' data-mh='tm-testimonial-excerpt'>
           <div class='uk-text-center'> <i class='uk-icon-star g5-color-goldstar uk-icon-small'></i><i class='uk-icon-star g5-color-goldstar uk-icon-small'></i><i class='uk-icon-star g5-color-goldstar uk-icon-small'></i><i class='uk-icon-star g5-color-goldstar uk-icon-small'></i><i class='uk-icon-star g5-color-goldstar uk-icon-small'></i> </div>
           <p class='uk-text-left uk-text-center-small'>
-            <div class='g5-color-black' style='line-height: normal'><i class='uk-icon-quote-right g5-color-warning uk-icon-justify uk-icon-small uk-align-left' style='color: rgb(255 255 255 / 22%);'></i> The staff at SOR is wonderful! Each person is friendly, patient, and helpful.The treatment plan begins very basically and progresses at your own pace until you complete your individual goal. </div>
+            <div class='g5-color-black' style='line-height: normal' data-mh='tm-testimonial-quote'><i class='uk-icon-quote-right g5-color-warning uk-icon-justify uk-icon-small uk-align-left' style='color: rgb(255 255 255 / 22%);'></i> The staff at SOR is wonderful! Each person is friendly, patient, and helpful.The treatment plan begins very basically and progresses at your own pace until you complete your individual goal. </div>
           </p>
           <p class='tm-testimonial-signature uk-text-right uk-text-center-small g5-color-primary'>- Sandi M.</p>
         </div>
       </li>
       <li>
-        <div class='g5-background-white g5-padding  g5-border-small g5-border-success'>
+        <div class='g5-background-white g5-padding  g5-border-small g5-border-success' data-mh='tm-testimonial-excerpt'>
           <div class='uk-text-center'> <i class='uk-icon-star g5-color-goldstar uk-icon-small'></i><i class='uk-icon-star g5-color-goldstar uk-icon-small'></i><i class='uk-icon-star g5-color-goldstar uk-icon-small'></i><i class='uk-icon-star g5-color-goldstar uk-icon-small'></i><i class='uk-icon-star g5-color-goldstar uk-icon-small'></i> </div>
           <p class='uk-text-left uk-text-center-small'>
-            <div class='g5-color-black' style='line-height: normal'><i class='uk-icon-quote-right g5-color-warning uk-icon-justify uk-icon-small uk-align-left' style='color: rgb(255 255 255 / 22%);'></i> There is a certain feeling of wellness here at this physical therapy rehab facility.  </div>
+            <div class='g5-color-black' style='line-height: normal' data-mh='tm-testimonial-quote'><i class='uk-icon-quote-right g5-color-warning uk-icon-justify uk-icon-small uk-align-left' style='color: rgb(255 255 255 / 22%);'></i> There is a certain feeling of wellness here at this physical therapy rehab facility.  </div>
           </p>
           <p class='tm-testimonial-signature uk-text-right uk-text-center-small g5-color-primary'>- Chrystie S.</p>
         </div>
       </li>
       <li>
-        <div class='g5-background-white g5-padding  g5-border-small g5-border-success'>
+        <div class='g5-background-white g5-padding  g5-border-small g5-border-success' data-mh='tm-testimonial-excerpt'>
           <div class='uk-text-center'> <i class='uk-icon-star g5-color-goldstar uk-icon-small'></i><i class='uk-icon-star g5-color-goldstar uk-icon-small'></i><i class='uk-icon-star g5-color-goldstar uk-icon-small'></i><i class='uk-icon-star g5-color-goldstar uk-icon-small'></i><i class='uk-icon-star g5-color-goldstar uk-icon-small'></i> </div>
           <p class='uk-text-left uk-text-center-small'>
-            <div class='g5-color-black' style='line-height: normal'><i class='uk-icon-quote-right g5-color-warning uk-icon-justify uk-icon-small uk-align-left' style='color: rgb(255 255 255 / 22%);'></i> I have had PT numerous times for my back. This was the first time I really found it helpful. Thanks, Rick, Jess, and Carol. </div>
+            <div class='g5-color-black' style='line-height: normal' data-mh='tm-testimonial-quote'><i class='uk-icon-quote-right g5-color-warning uk-icon-justify uk-icon-small uk-align-left' style='color: rgb(255 255 255 / 22%);'></i> I have had PT numerous times for my back. This was the first time I really found it helpful. Thanks, Rick, Jess, and Carol. </div>
           </p>
           <p class='tm-testimonial-signature uk-text-right uk-text-center-small g5-color-primary'>- Susan N.</p>
         </div>
@@ -638,9 +583,9 @@ Roanoke, VA 24018</div></a><br>
 <section id="tm-cta" style="background-image: url(img/stock-10891.jpg?v=1);background-position: center;background-size: cover;background-attachment:fixed">
   <div class="uk-block" style="background: rgb(255 255 255 / 80%);">
     <div class="uk-container uk-container-center">
-      <div class="uk-grid uk-text-center uk-flex uk-flex-center uk-flex-middle">
+      <div class="uk-grid uk-text-center uk-flex uk-flex-center uk-flex-middle" data-uk-grid-margin>
         <div class="uk-width-medium-1-2">
-          <div class="scroll-fade">
+          <div data-uk-scrollspy="{cls:'uk-animation-fade', delay:200, repeat:true}">
             <div class="uk-h2 g5-color-primary uk-text-bold">Ready to Feel Better? Schedule Your Initial Evaluation & <br><span class="uk-h1 tm-uppercase g5-color-primary-shade"> Let's Make Things Happen!</span></div>
           </div>
         </div>
@@ -660,7 +605,7 @@ Roanoke, VA 24018</div></a><br>
 <!-- ===== FOOTER SECTION ===== -->
 <footer id="footer" class="g5-background-primary">
   <div class='uk-container uk-container-center g5-padding-bottom'>
-    <div class="uk-grid uk-grid-medium uk-flex uk-flex-center">
+    <div class="uk-grid uk-grid-medium uk-flex uk-flex-center" data-uk-grid-margin>
       <div class="uk-width-1-1">
         <p class="uk-text-center g5-padding-top"><a class="g5-color-white g5-hover-color-warning uk-text-center" href="#" title="Back to Top" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;"><i class="uk-icon-arrow-up g5-color-warning"></i> Back to Top</a></p>
       </div>
@@ -723,193 +668,9 @@ Roanoke, VA 24018</div>
 </footer>
 
 <div style="display:none" id="practiceid">128</div>
-
-<!-- Glide.js Carousel from CDN -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.2.0/glide.min.js"></script>
-
-<!-- Vanilla JavaScript implementations -->
-<script>
-// ===== GLIDE.JS CAROUSEL INITIALIZATION =====
-(function() {
-  const carouselElement = document.querySelector('#services-carousel');
-  if (!carouselElement) return;
-
-  // Initialize Glide.js with true infinite looping support
-  const glide = new Glide('#services-carousel', {
-    type: 'carousel',  // This enables true infinite looping!
-    perView: 4,  // Default: show 4 slides on large screens
-    autoplay: 3000,
-    hoverpause: true,
-    animationDuration: 500,
-    gap: 20,  // Reduced gap between slides
-    peek: 0,  // No partial slides visible
-//    bound: true,  // Prevent overflowing
-    breakpoints: {
-      979: {
-        perView: 3  // At 1200px and below: show 3 slides
-      },
-      768: {
-        perView: 2  // At 768px and below (mobile): show 1 slide
-      },
-			479: {
-				perView: 1
-			}
-    }
-  });
-
-  // Mount the carousel
-  glide.mount();
-
-  // Bind custom arrow controls
-  const prevBtn = document.getElementById('carousel-prev');
-  const nextBtn = document.getElementById('carousel-next');
-  const prevMobile = document.getElementById('carousel-prev-mobile');
-  const nextMobile = document.getElementById('carousel-next-mobile');
-
-  if (prevBtn) {
-    prevBtn.addEventListener('click', function(e) {
-      e.preventDefault();
-      glide.go('<');  // Go to previous slide
-    });
-  }
-
-  if (nextBtn) {
-    nextBtn.addEventListener('click', function(e) {
-      e.preventDefault();
-      glide.go('>');  // Go to next slide
-    });
-  }
-
-  if (prevMobile) {
-    prevMobile.addEventListener('click', function(e) {
-      e.preventDefault();
-      glide.go('<');
-    });
-  }
-
-  if (nextMobile) {
-    nextMobile.addEventListener('click', function(e) {
-      e.preventDefault();
-      glide.go('>');
-    });
-  }
-})();
-
-// ===== SCROLL FADE ANIMATIONS =====
-(function() {
-  const fadeElements = document.querySelectorAll('.scroll-fade');
-  if (!fadeElements.length) return;
-
-  // Create IntersectionObserver
-  const observer = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
-      if (entry.isIntersecting) {
-        // Add fade animation class immediately when element enters viewport
-        entry.target.classList.add('uk-animation-fade');
-      } else {
-        // Remove animation class when element leaves viewport
-        // This enables the repeat behavior
-        entry.target.classList.remove('uk-animation-fade');
-      }
-    });
-  }, {
-    threshold: 0.2, // Trigger when 20% of element is visible
-    rootMargin: '-50px' // Start animation 50px before element enters viewport
-  });
-
-  // Observe all fade elements
-  fadeElements.forEach(function(element) {
-    observer.observe(element);
-  });
-})();
-
-// ===== MATCH HEIGHT FUNCTIONALITY =====
-(function() {
-  // Find all unique data-mh groups (we removed the attributes but need to identify the elements)
-  // Target specific sections that need height matching
-  const matchGroups = [
-    { selector: '#tm-value-stack .uk-grid > li > div > div', name: 'value-boxes' },
-    { selector: '#tm-plan .uk-panel', name: 'plan-panels' },
-    { selector: '#tm-testimonials .g5-background-white', name: 'testimonials' }
-  ];
-
-  function matchHeights(selector) {
-    const elements = document.querySelectorAll(selector);
-    if (!elements.length) return;
-
-    // Reset heights first
-    elements.forEach(function(el) {
-      el.style.height = '';
-    });
-
-    // Group elements by row (with threshold for offsetTop differences)
-    const rows = [];
-    const threshold = 50; // pixels threshold for considering elements in same row
-
-    elements.forEach(function(el) {
-      const top = el.offsetTop;
-      let foundRow = false;
-
-      // Check if element belongs to existing row
-      for (let i = 0; i < rows.length; i++) {
-        const rowTop = rows[i].top;
-        if (Math.abs(top - rowTop) < threshold) {
-          rows[i].elements.push(el);
-          foundRow = true;
-          break;
-        }
-      }
-
-      // Create new row if not found
-      if (!foundRow) {
-        rows.push({ top: top, elements: [el] });
-      }
-    });
-
-    // Apply max height to each row
-    rows.forEach(function(row) {
-      let maxHeight = 0;
-
-      // Find max height in this row
-      row.elements.forEach(function(el) {
-        const height = el.offsetHeight;
-        if (height > maxHeight) {
-          maxHeight = height;
-        }
-      });
-
-      // Apply max height to all elements in row
-      row.elements.forEach(function(el) {
-        el.style.height = maxHeight + 'px';
-      });
-    });
-  }
-
-  function matchAllGroups() {
-    matchGroups.forEach(function(group) {
-      matchHeights(group.selector);
-    });
-  }
-
-  // Initial match
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', matchAllGroups);
-  } else {
-    matchAllGroups();
-  }
-
-  // Re-match on window resize (throttled)
-  let resizeTimer;
-  window.addEventListener('resize', function() {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(function() {
-      matchAllGroups();
-    }, 100);
-  });
-
-  // Re-match after images load
-  window.addEventListener('load', matchAllGroups);
-})();
-</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" id="jquery-js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.26.3/js/uikit.min.js" id="uikitcore_js-js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.26.3/js/components/slider.min.js" id="slider-js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.2/jquery.matchHeight-min.js" id="matchheight-js"></script>
 </body>
 </html>
