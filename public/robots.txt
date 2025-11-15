@@ -1,0 +1,7 @@
+# robots.txt for sor-va.com
+# Static site with infrequent content updates
+# Content is rarely updated - no need for frequent crawling
+
+User-agent: *
+Allow: /
+Crawl-delay: 86400
